@@ -1,0 +1,1324 @@
+﻿/*!
+ * Bootstrap ASP .NET MVC tag helpers by jQWidgets - about Bootstrap v3.3.5
+ */
+.dropdown-menu >  li > .jqx-bootstrap >  a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+}
+.dropdown-menu > .bootstrap-dropdown-menu-item >  a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+}
+.dropdown-menu > .bootstrap-dropdown-menu-item >  a:hover,
+.dropdown-menu > .bootstrap-dropdown-menu-item >  a:focus {
+  color: #262626;
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+.dropdown-menu >  li > .jqx-bootstrap >  a:hover,
+.dropdown-menu >  li > .jqx-bootstrap >  a:focus {
+  color: #262626;
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+.btn-group > bootstrap-button > .btn,
+.btn-group-vertical > bootstrap-button > .btn {
+  position: relative;
+  float: left;
+}
+.btn-group > bootstrap-button > .btn:hover,
+.btn-group-vertical > bootstrap-button > .btn:hover,
+.btn-group > bootstrap-button > .btn:focus,
+.btn-group-vertical > bootstrap-button > .btn:focus,
+.btn-group > bootstrap-button > .btn:active,
+.btn-group-vertical > bootstrap-button > .btn:active,
+.btn-group > bootstrap-button > .btn.active,
+.btn-group-vertical > bootstrap-button > .btn.active {
+  z-index: 2;
+}
+.btn-group  bootstrap-button > .btn + bootstrap-button > .btn,
+.btn-group bootstrap-button > .btn + bootstrap-button > .btn-group,
+.btn-group bootstrap-button > .btn-group + bootstrap-button > .btn,
+.btn-group bootstrap-button > .btn-group + bootstrap-button > .btn-group {
+  margin-left: -1px;
+}
+.btn-group  bootstrap-button + bootstrap-button ,
+.btn-group bootstrap-button + .btn-group,
+.btn-group bootstrap-button + .btn,
+.btn-group bootstrap-button + bootstrap-button > .btn-group {
+  margin-left: -1px;
+}
+.btn-group > bootstrap-button > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+.btn-group > bootstrap-button > .btn:first-child {
+  margin-left: 0;
+}
+.btn-group > bootstrap-button > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn-group > bootstrap-button > .btn:last-child:not(:first-child),
+.btn-group > bootstrap-button > .dropdown-toggle:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-group > bootstrap-button > .btn-group {
+  float: left;
+}
+.btn-group > bootstrap-button > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.btn-group > bootstrap-button :not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.btn-group > bootstrap-button :not(:first-child):not(:last-child)  > .btn{
+  border-radius: 0;
+}
+.btn-group > bootstrap-button > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group > bootstrap-button > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn-group > bootstrap-button > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-group > bootstrap-button > .btn + .dropdown-toggle {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+.btn-group > bootstrap-button > .btn-lg + .dropdown-toggle {
+  padding-right: 12px;
+  padding-left: 12px;
+}
+.btn-group-vertical > bootstrap-button,
+.btn-group-vertical > .btn-group,
+.btn-group-vertical > .btn-group > bootstrap-button > .btn{
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+}
+.btn-group-vertical > .btn-group > bootstrap-button > .btn {
+  float: none;
+}
+.btn-group-vertical > bootstrap-button + bootstrap-button> .btn,
+.btn-group-vertical > bootstrap-dropdown + bootstrap-button > .btn,
+.btn-group-vertical > bootstrap-button + bootstrap-dropdown > .btn,
+.btn-group-vertical > bootstrap-dropdown + bootstrap-dropdown > .btn,
+.btn-group-vertical > bootstrap-button + .btn-group > .btn,
+.btn-group-vertical > .btn-group + bootstrap-button,
+.btn-group-vertical > .btn-group + .btn-group {
+  margin-top: -1px;
+  margin-left: 0;
+}
+.btn-group-vertical > bootstrap-button:not(:first-child):not(:last-child) > .btn,
+.btn-group-vertical > bootstrap-dropdown:not(:first-child):not(:last-child) > .btn  {
+  border-radius: 0;
+}
+.btn-group-vertical > bootstrap-button:first-child:not(:last-child)  > .btn{
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-group-vertical  > bootstrap-dropdown:last-child:not(:first-child) > .btn,
+.btn-group-vertical  > bootstrap-button:last-child:not(:first-child) > .btn {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+bootstrap-button-group.btn-group-justified > bootstrap-button >.btn,
+.btn-group-justified > .btn-group {
+  /*display: table-cell;*/
+  float: none;
+  width: 1%;
+}
+.btn-group-justified > .btn-group bootstrap-button {
+  width: 100%;
+}
+bootstrap-button-group.btn-group-justified .btn{
+    width: 100%!important;
+    min-width: 100%!important;
+}
+.btn-group-justified > .btn-group .dropdown-menu {
+  left: auto;
+}
+[data-toggle="buttons"] > bootstrap-button > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn-group > bootstrap-button > .btn input[type="radio"],
+[data-toggle="buttons"] > bootstrap-button > .btn input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > bootstrap-button > .btn input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+.input-group .form-control:first-child,
+.input-group-addon:first-child,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group > bootstrap-button > .btn,
+.input-group-btn:first-child > .dropdown-toggle,
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+:last-child.input-group-btn > bootstrap-dropdown > bootstrap-dropdown-label {
+  border-top-right-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+}
+:first-child.input-group-btn > :not(:first-child) > .btn,
+:last-child.input-group-btn > :not(:last-child) > .btn{
+    border-radius: 0px;
+}
+.input-group .form-control:last-child,
+.input-group-addon:last-child,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group > bootstrap-button > .btn,
+.input-group-btn:last-child > .dropdown-toggle,
+.input-group-btn:first-child > .btn:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.nav >  bootstrap-tab >  a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+.nav >  bootstrap-tab >  a:hover,
+.nav >  bootstrap-tab >  a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+.nav > bootstrap-tab.disabled > a {
+  color: #777;
+}
+.nav > bootstrap-tab.disabled > a:hover,
+.nav > bootstrap-tab.disabled > a:focus {
+  color: #777;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+.nav > bootstrap-tab {
+  position: relative;
+  display: block;
+}
+.nav >  bootstrap-tab >  bootstrap-dropdown {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+.nav >  bootstrap-tab >  bootstrap-dropdown:hover,
+.nav >  bootstrap-tab >  bootstrap-dropdown:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+.nav > bootstrap-tab.disabled > bootstrap-dropdown {
+  color: #777;
+}
+.nav > bootstrap-tab.disabled > bootstrap-dropdown:hover,
+.nav > bootstrap-tab.disabled > bootstrap-dropdown:focus {
+  color: #777;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+.nav >  bootstrap-tab >  a > img {
+  max-width: none;
+}
+.nav > bootstrap-tab {
+  position: relative;
+  display: block;
+}
+.nav > bootstrap-tab > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+.nav > bootstrap-tab > a:hover,
+.nav > bootstrap-tab > a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+.nav > bootstrap-tab.disabled > a {
+  color: #777;
+}
+.nav > bootstrap-tab.disabled > a:hover,
+.nav > bootstrap-tab.disabled > a:focus {
+  color: #777;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+.nav > bootstrap-tab > bootstrap-dropdown {
+  position: relative;
+  display: block;
+  padding: 8px 15px 12px 15px;
+}
+.nav > bootstrap-tab > bootstrap-dropdown:hover,
+.nav > bootstrap-tab > bootstrap-dropdown:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+.nav > bootstrap-tab.disabled > bootstrap-dropdown {
+  color: #777;
+}
+.nav > bootstrap-tab.disabled > bootstrap-dropdown:hover,
+.nav > bootstrap-tab.disabled > bootstrap-dropdown:focus {
+  color: #777;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+.nav-tabs > bootstrap-tab {
+  float: left;
+  margin-bottom: -1px;
+}
+.nav-tabs > bootstrap-tab {
+  float: left;
+  margin-bottom: -1px;
+}
+.nav-tabs > bootstrap-tab >  a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.nav-tabs > bootstrap-tab >  a:hover {
+  border-color: #eee #eee #ddd;
+}
+.nav-tabs > bootstrap-tab.active > a,
+.nav-tabs > bootstrap-tab.active > a:hover,
+.nav-tabs > bootstrap-tab.active > a:focus {
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+.nav-tabs > bootstrap-tab >  bootstrap-dropdown {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.nav-tabs > bootstrap-tab >  bootstrap-dropdown:hover {
+  border-color: #eee #eee #ddd;
+}
+.nav-tabs > bootstrap-tab.active > bootstrap-dropdown,
+.nav-tabs > bootstrap-tab.active > bootstrap-dropdown:hover,
+.nav-tabs > bootstrap-tab.active > bootstrap-dropdown:focus {
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+.nav-tabs > bootstrap-tab bootstrap-dropdown-label {
+    margin:0px 0px -2px 0px !important;
+    padding:0px !important;
+    border:0px !important;
+  text-decoration:none !important;
+}
+.nav-tabs > bootstrap-tab.active bootstrap-dropdown-label,
+.nav-tabs > bootstrap-tab.activ bootstrap-dropdown-label,
+.nav-tabs > bootstrap-tab.active bootstrap-dropdown-label {
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+.nav-tabs > bootstrap-tab {
+  float: left;
+  margin-bottom: -1px;
+}
+.nav-tabs > bootstrap-tab > a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.nav-tabs > bootstrap-tab > a:hover {
+  border-color: #eee #eee #ddd;
+}
+.nav-tabs > bootstrap-tab.active > a,
+.nav-tabs > bootstrap-tab.active > a:hover,
+.nav-tabs > bootstrap-tab.active > a:focus {
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+.nav-tabs.nav-justified > bootstrap-tab {
+  float: none;
+}
+.nav-tabs.nav-justified >  bootstrap-tab >  a {
+  margin-bottom: 5px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified > bootstrap-tab {
+    display: table-cell;
+    width: 1%;
+  }
+  .nav-tabs.nav-justified >  bootstrap-tab >  a {
+    margin-bottom: 0;
+  }
+}
+.nav-tabs.nav-justified > .jqx-bootstrap >  a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified >  bootstrap-tab >  a {
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+  }
+}
+.nav-pills >  bootstrap-tab >  a {
+  border-radius: 4px;
+}
+.nav-pills > bootstrap-tab + bootstrap-tab {
+  margin-left: 2px;
+}
+.nav-pills > bootstrap-tab.active > a,
+.nav-pills > bootstrap-tab.active > a:hover,
+.nav-pills > bootstrap-tab.active > a:focus {
+  color: #fff;
+  background-color: #337ab7;
+}
+.nav-stacked > bootstrap-nav-item {
+  float: none !important;
+}
+.nav-stacked > bootstrap-nav-item + bootstrap-nav-item {
+  margin-top: 2px;
+  margin-left: 0;
+}
+.nav-stacked > bootstrap-nav-item + bootstrap-nav-item {
+  margin-top: 2px;
+  margin-left: 0;
+}
+.nav-justified > bootstrap-tab {
+  float: none;
+}
+.nav-justified >  bootstrap-tab >  a {
+  margin-bottom: 5px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .nav-justified >  li > .jqx-bootstrap >  a {
+    margin-bottom: 0;
+  }
+}
+.nav-tabs-justified >  bootstrap-tab >  a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+@media (min-width: 768px) {
+  .nav-tabs-justified >  bootstrap-tab >  a {
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+  }
+}
+bootstrap-tabs-content > .active {
+  display: block;
+  clear:both; 
+}
+.tab-content > .active {
+  display: block;
+  clear:both;
+}
+bootstrap-tabs-nav{
+    display:block;
+}
+.container-fluid > .navbar-header,
+.container-fluid .navbar-brand,
+.container-fluid > .navbar-collapse {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+@media (min-width: 768px) {
+  .navbar > .container .navbar-brand{
+    margin-left: -15px;
+  }
+  .navbar > .container-fluid .navbar-brand {
+    margin-left: 0px;
+  }
+}
+.navbar-nav >  li > .jqx-bootstrap >  a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+}
+@media (max-width: 767px) {
+  .navbar-nav .open .dropdown-menu >  li > .jqx-bootstrap >  a,
+  .navbar-nav .open .dropdown-menu .dropdown-header {
+    padding: 5px 15px 5px 25px;
+  }
+  .navbar-nav .open .dropdown-menu >  li > .jqx-bootstrap >  a {
+    line-height: 20px;
+  }
+  .navbar-nav .open .dropdown-menu >  li > .jqx-bootstrap >  a:hover,
+  .navbar-nav .open .dropdown-menu >  li > .jqx-bootstrap >  a:focus {
+    background-image: none;
+  }
+}
+@media (min-width: 768px) {
+  .navbar-nav >  li > .jqx-bootstrap >  a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+.navbar-default .navbar-nav >  li > .jqx-bootstrap >  a {
+  color: #777;
+}
+.navbar-default .navbar-nav >  li > .jqx-bootstrap >  a:hover,
+.navbar-default .navbar-nav >  li > .jqx-bootstrap >  a:focus {
+  color: #333;
+  background-color: transparent;
+}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu >  li > .jqx-bootstrap >  a {
+    color: #777;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu >  li > .jqx-bootstrap >  a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu >  li > .jqx-bootstrap >  a:focus {
+    color: #333;
+    background-color: transparent;
+  }
+}
+.navbar-inverse .navbar-nav >  li > .jqx-bootstrap >  a {
+  color: #9d9d9d;
+}
+.navbar-inverse .navbar-nav >  li > .jqx-bootstrap >  a:hover,
+.navbar-inverse .navbar-nav >  li > .jqx-bootstrap >  a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+@media (max-width: 767px) {
+  .navbar-inverse .navbar-nav .open .dropdown-menu >  li > .jqx-bootstrap >  a {
+    color: #9d9d9d;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu >  li > .jqx-bootstrap >  a:hover,
+  .navbar-inverse .navbar-nav .open .dropdown-menu >  li > .jqx-bootstrap >  a:focus {
+    color: #fff;
+    background-color: transparent;
+  }
+}
+.pagination >  li > .jqx-bootstrap >  a,
+.pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.pagination >  li > .jqx-bootstrap >  a:hover,
+.pagination > li > span:hover,
+.pagination >  li > .jqx-bootstrap >  a:focus,
+.pagination > li > span:focus {
+  z-index: 3;
+  color: #23527c;
+  background-color: #eee;
+  border-color: #ddd;
+}
+.pagination-lg >  li > .jqx-bootstrap >  a,
+.pagination-lg > li > span {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+}
+.pagination-lg > li:first-child > a,
+.pagination-lg > li:first-child > span {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.pagination-lg > li:last-child > a,
+.pagination-lg > li:last-child > span {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.pagination-sm >  li > .jqx-bootstrap >  a,
+.pagination-sm > li > span {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.pagination-sm > li:first-child > a,
+.pagination-sm > li:first-child > span {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.pagination-sm > li:last-child > a,
+.pagination-sm > li:last-child > span {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.pager  li > .jqx-bootstrap >  a,
+.pager li > span {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+.pager  li > .jqx-bootstrap >  a:hover,
+.pager  li > .jqx-bootstrap >  a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+.nav-pills >  li > .jqx-bootstrap >  a > .badge {
+  margin-left: 3px;
+}
+bootstrap-collapse{
+    display:block;
+}
+.carousel-indicators bootstrap-carousel-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #000 \9;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+bootstrap-alert, bootstrap-alert-button{
+    display:block;
+}
+bootstrap-modal, bootstrap-modal-dialog, bootstrap-modal-content, bootstrap-modal-header, bootstrap-modal-body, bootstrap-modal-footer{
+    display:block;
+}
+bootstrap-button{
+    display:inline-block;
+}
+bootstrap-modal-header > bootstrap-button{
+    float:right;
+}
+bootstrap-button .btn:focus,
+bootstrap-button .btn:active:focus,
+bootstrap-button .btn.active:focus,
+bootstrap-button .btn.focus,
+bootstrap-button .btn:active.focus,
+bootstrap-button .btn.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: 0px !important;
+}
+.popover.static {
+    position:relative;
+    display:block;
+    width:500px;
+    max-width:500px;
+    z-index:1;
+    margin:20px;
+}
+.tooltip.static {
+    display:inline-block; 
+    position:relative;
+}
+bootstrap-dropdown, bootstrap-dropdown-label, bootstrap-dropdown-menu, bootstrap-dropdown-menu-item
+{
+    display:block;
+}
+bootstrap-dropdown, bootstrap-dropup{
+    display:inline-block;
+}
+.dropdown-menu > bootstrap-dropdown-menu-item > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+}
+.dropdown-menu > bootstrap-dropdown-menu-item > a:hover,
+.dropdown-menu > bootstrap-dropdown-menu-item > a:focus {
+  color: #262626;
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+bootstrap-dropdown-menu-item.disabled:hover,
+bootstrap-dropdown-menu-item.disabled:focus {
+  background-color:white;
+}
+bootstrap-dropdown-menu-item.disabled > a,
+bootstrap-dropdown-menu-item.disabled > a:hover,
+bootstrap-dropdown-menu-item.disabled > a:focus {
+  color: #777 !important;
+  background-color:white!important;
+}
+.navbar-nav bootstrap-dropdown-label:hover{
+    border:0px;
+    padding:15px;
+    text-decoration:none;
+}
+.navbar-nav .open bootstrap-dropdown-label:hover{
+    background-color:#eee;
+    padding:15px;
+    text-decoration:none;
+}
+.navbar-nav bootstrap-dropdown-label{
+    border:0px;
+    padding:15px;
+    text-decoration:none;
+}
+.navbar-nav .open bootstrap-dropdown-label{
+    background-color:#eee;
+    padding:15px;
+    text-decoration:none;
+}
+.nav-pills bootstrap-dropdown-label{
+    border:0px;
+    padding:10px;
+}
+.nav-pills .open bootstrap-dropdown-label{
+    background-color:#eee;
+    padding:10px;
+}
+bootstrap-dropdown-label.btn .caret{
+    margin-left:2px;
+}
+bootstrap-collapse>ul.list-group{
+    margin-bottom:0px;
+}
+bootstrap-collapse .list-group-item{
+    border-top-width: 1px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-radius: 0px;
+}
+bootstrap-collapse .list-group-item:first-child{
+    border-bottom-width: 1px;
+    border-radius: 0px;
+}
+bootstrap-collapse .list-group-item:last-child{
+    border-bottom-width: 1px;
+    border-radius: 0px;
+}
+.panel-heading bootstrap-button .btn{
+    color: inherit;
+    font-size:16px;
+    padding:0px;
+}
+bootstrap-collapse p {
+    margin:15px;
+}
+bootstrap-button-toolbar{
+    display: inline-block;
+}
+bootstrap-button-group>bootstrap-button{
+    display:inline-block;
+}
+bootstrap-button-group.btn-group-vertical > bootstrap-button,
+bootstrap-button-group.btn-group-vertical > bootstrap-button > .btn{
+    display:inline;
+}
+bootstrap-button-group.btn-group-vertical > bootstrap-button,
+bootstrap-button-group.btn-group-vertical > bootstrap-dropdown{
+    width:100%;
+}
+bootstrap-button-group.btn-group-verticsal{
+    vertical-align:top;
+}
+bootstrap-panel, bootstrap-panel-header, bootstrap-panel-body,  bootstrap-panel-footer{
+    display:block;
+}
+bootstrap-nav {
+    display:block;
+}
+bootstrap-nav-item {
+    display:inline-block;
+}
+bootstrap-nav-bar .navbar-header bootstrap-button {
+    float:right!important;
+}
+bootstrap-nav-bar form bootstrap-button .btn{
+    margin:0;
+}
+.nav > bootstrap-nav-item {
+  position: relative;
+  display: block;
+}
+.nav > bootstrap-nav-item > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+.nav > bootstrap-nav-item > a:hover,
+.nav > bootstrap-nav-item > a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+.nav > bootstrap-nav-item.disabled > a {
+  color: #777;
+}
+.nav > bootstrap-nav-item.disabled > a:hover,
+.nav > bootstrap-nav-item.disabled > a:focus {
+  color: #777;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+.nav > bootstrap-nav-item .btn {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  color:#337ab7;
+  border:0px ;
+}
+.nav.nav-tabs > bootstrap-nav-item {
+  margin-bottom:0px;
+}
+.nav.nav-tabs > bootstrap-nav-item .btn {
+  border-bottom-right-radius:0px;
+  border-bottom-left-radius:0px;
+  margin-bottom:0px;
+  border:1px solid transparent;
+  margin-right:2px;
+  margin-right:2px;
+}
+.nav > bootstrap-nav-item  .btn:hover,
+.nav > bootstrap-nav-item  .btn:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+.nav > bootstrap-nav-item.disabled .btn {
+  color: inherit;
+  border:0px ;
+}
+.nav > bootstrap-nav-item.disabled .btn:hover,
+.nav > bootstrap-nav-item.disabled .btn:focus {
+  color: #777;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+.nav > bootstrap-nav-item > a > img {
+  max-width: none;
+}
+.nav-pills > bootstrap-nav-item {
+  float: left;
+}
+.nav-pills >  bootstrap-nav-item >  a {
+  border-radius: 4px;
+}
+.nav-pills > bootstrap-nav-item {
+  margin-left: 2px;
+}
+.nav-pills > bootstrap-nav-item.active > a,
+.nav-pills > bootstrap-nav-item.active > a:hover,
+.nav-pills > bootstrap-nav-item.active > a:focus {
+  color: #fff;
+  background-color: #337ab7;
+}
+.nav-tabs > bootstrap-nav-item {
+  float: left;
+  margin-bottom: -1px;
+}
+.nav-tabs > bootstrap-nav-item > a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.nav-tabs > bootstrap-nav-item > a:hover {
+  border-color: #eee #eee #ddd;
+}
+.nav-tabs > bootstrap-nav-item.active > a,
+.nav-tabs > bootstrap-nav-item.active > a:hover,
+.nav-tabs > bootstrap-nav-item.active > a:focus {
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+.nav-tabs.nav-justified > bootstrap-nav-item {
+  float: none;
+}
+.nav-tabs.nav-justified > bootstrap-nav-item > a {
+  margin-bottom: 5px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified > bootstrap-nav-item {
+    display: table-cell;
+    width: 1%;
+  }
+  .nav-tabs.nav-justified > bootstrap-nav-item > a {
+    margin-bottom: 0;
+  }
+}
+.nav-tabs.nav-justified > bootstrap-nav-item > a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified > bootstrap-nav-item > a {
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+  }
+}
+.navbar-nav > bootstrap-nav-item {
+    display:inline-block;
+}
+.navbar-nav > bootstrap-nav-item:hover  {
+    background-color:transparent;
+}
+.navbar-nav > bootstrap-nav-item .btn,
+.navbar-nav > bootstrap-nav-item > a {
+    padding-top:15px;
+    padding-bottom:15px;
+    margin:0px;
+    background-color:transparent;
+    color:#777;
+}
+.navbar-nav > bootstrap-nav-item .btn:hover,
+.navbar-nav > bootstrap-nav-item > a:hover {
+    color:#333;
+    background-color:transparent;
+}
+.btn-group .btn,
+.btn-group-vertical .btn {
+  position: relative;
+  float: left;
+  margin:0px;
+}
+.btn-group bootstrap-button,
+.btn-group-vertical bootstrap-button {
+  position: relative;
+  float: left;
+}
+.btn-group .btn:hover,
+.btn-group-vertical .btn:hover,
+.btn-group .btn:focus,
+.btn-group-vertical .btn:focus,
+.btn-group .btn:active,
+.btn-group-vertical .btn:active,
+.btn-group .btn.active,
+.btn-group-vertical .btn.active {
+  z-index: 2;
+}
+.btn-group bootstrap-button>.btn + bootstrap-button>.btn,
+.btn-group .btn + .btn-group,
+.btn-group .btn-group + .btn,
+.btn-group .btn-group + .btn-group {
+  margin-left: -1px;
+}
+.btn-group .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+.btn-group > bootstrap-button > .btn:first-child {
+  margin-left: 0;
+}
+.btn-group .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn-group .btn:last-child:not(:first-child),
+.btn-group .dropdown-toggle:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-group .btn-group {
+  float: left;
+}
+.btn-group .btn-group:not(:first-child):not(:last-child) .btn {
+  border-radius: 0;
+}
+.btn-group .btn-group:first-child:not(:last-child) .btn:last-child,
+.btn-group .btn-group:first-child:not(:last-child) .dropdown-toggle {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn-group .btn-group:last-child:not(:first-child) .btn:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-group .btn + .dropdown-toggle {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+.btn-group .btn-lg + .dropdown-toggle {
+  padding-right: 12px;
+  padding-left: 12px;
+}
+.btn-group-vertical .btn,
+.btn-group-vertical .btn-group,
+.btn-group-vertical .btn-group .btn {
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+}
+.btn-group-vertical .btn-group .btn {
+  float: none;
+}
+.btn-group-vertical .btn + .btn,
+.btn-group-vertical .btn + .btn-group,
+.btn-group-vertical .btn-group + .btn,
+.btn-group-vertical .btn-group + .btn-group {
+  margin-top: -1px;
+  margin-left: 0;
+}
+.btn-group-vertical .btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.btn-group-vertical .btn:first-child:not(:last-child) {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-group-vertical .btn:last-child:not(:first-child) {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 4px;
+}
+.btn-group-vertical .btn-group:not(:first-child):not(:last-child) .btn {
+  border-radius: 0;
+}
+.btn-group-vertical .btn-group:first-child:not(:last-child) .btn:last-child,
+.btn-group-vertical .btn-group:first-child:not(:last-child) .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-group-vertical .btn-group:last-child:not(:first-child) > .btn:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.btn-group-justified bootstrap-button,
+.btn-group-justified .btn-group {
+  display: table-cell;
+  float: none;
+  width: 1%;
+}
+.btn-group-justified .btn {
+  width: 100%;
+}
+.btn-group-justified .btn-group .dropdown-menu {
+  left: auto;
+}
+.btn-group-justified bootstrap-dropdown {
+  width:100%;
+}
+.btn-group-justified bootstrap-dropdown .btn {
+  width:100%;
+}
+[data-toggle="buttons"] .btn input[type="radio"],
+[data-toggle="buttons"] > .btn-group .btn input[type="radio"],
+[data-toggle="buttons"] .btn input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group .btn input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+bootstrap-breadcrumb {
+    display:block;
+}
+bootstrap-breadcrumb > bootstrap-breadcrumb-item {
+  display: inline-block;
+}
+bootstrap-breadcrumb > bootstrap-breadcrumb-item + bootstrap-breadcrumb-item:before {
+  padding: 0 5px;
+  color: #ccc;
+  content: "/\00a0";
+}
+bootstrap-breadcrumb > .active {
+  color: #777;
+}
+bootstrap-jumbotron {
+    display:block;
+}
+bootstrap-page-header {
+    display:block;
+}
+bootstrap-progress, bootstrap-progress-bar{
+    display:block;
+}
+bootstrap-media-list, bootstrap-media, bootstrap-media-body, bootstrap-media-left, bootstrap-media-right{
+    display:block;
+}
+bootstrap-well{
+    display:block;
+}
+bootstrap-pagination, bootstrap-pagination-nav{
+    display:block;
+}
+bootstrap-pagination-item{
+    display:inline-block;
+}
+.pagination > bootstrap-pagination-item {
+  display: inline;
+}
+.pagination > bootstrap-pagination-item > a,
+.pagination > bootstrap-pagination-item > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.pagination > bootstrap-pagination-item:first-child > a,
+.pagination > bootstrap-pagination-item:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.pagination > bootstrap-pagination-item:last-child > a,
+.pagination > bootstrap-pagination-item:last-child > span {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.pagination > bootstrap-pagination-item > a:hover,
+.pagination > bootstrap-pagination-item > span:hover,
+.pagination > bootstrap-pagination-item > a:focus,
+.pagination > bootstrap-pagination-item > span:focus {
+  z-index: 3;
+  color: #23527c;
+  background-color: #eee;
+  border-color: #ddd;
+}
+.pagination-lg > bootstrap-pagination-item > a,
+.pagination-lg > bootstrap-pagination-item > span {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+}
+.pagination-lg > bootstrap-pagination-item:first-child > a,
+.pagination-lg > bootstrap-pagination-item:first-child > span {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.pagination-lg > bootstrap-pagination-item:last-child > a,
+.pagination-lg > bootstrap-pagination-item:last-child > span {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.pagination-sm > bootstrap-pagination-item > a,
+.pagination-sm > bootstrap-pagination-item > span {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.pagination-sm > bootstrap-pagination-item:first-child > a,
+.pagination-sm > bootstrap-pagination-item:first-child > span {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.pagination-sm > bootstrap-pagination-item:last-child > a,
+.pagination-sm > bootstrap-pagination-item:last-child > span {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.pager bootstrap-pagination-item {
+  display: inline;
+}
+.pager bootstrap-pagination-item > a,
+.pager bootstrap-pagination-item > span {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+.pager bootstrap-pagination-item > a:hover,
+.pager bootstrap-pagination-item > a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+bootstrap-thumbnail {
+    display:inline-block;
+}
+bootstrap-thumbnail {
+    display:inline-block;
+}
+bootstrap-input-group{
+    display:block;
+}
+bootstrap-input-group-addon{
+    display:block;
+}
+input,
+select,
+textarea {
+  max-width: none !important;
+}
+.input-group-lg > .input-group-btn .btn {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+select.input-group-lg > .input-group-btn .btn {
+  height: 46px;
+  line-height: 46px;
+}
+textarea.input-group-lg > .input-group-btn .btn,
+select[multiple].input-group-lg > .input-group-btn .btn {
+  height: auto;
+}
+.input-group-sm > .input-group-btn .btn {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+select.input-group-sm > .input-group-btn .btn {
+  height: 30px;
+  line-height: 30px;
+}
+textarea.input-group-sm > .input-group-btn .btn,
+select[multiple].input-group-sm > .input-group-btn .btn {
+  height: auto;
+}
+.input-group-btn:first-child .btn,
+.input-group-btn:first-child .btn-group .btn,
+.input-group-btn:first-child .dropdown-toggle,
+.input-group-btn:last-child .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child .btn-group:not(:last-child) .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group .form-control:last-child,
+.input-group-addon:last-child,
+.input-group-btn:last-child .btn,
+.input-group-btn:last-child .btn-group .btn,
+.input-group-btn:last-child .dropdown-toggle,
+.input-group-btn:first-child .btn:not(:first-child),
+.input-group-btn:first-child .btn-group:not(:first-child) .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.input-group-btn .btn {
+  position: relative;
+}
+.input-group-btn> bootstrap-button>.btn + bootstrap-button>.btn {
+  margin-left: -1px;
+}
+.input-group-btn .btn:hover,
+.input-group-btn .btn:focus,
+.input-group-btn .btn:active {
+  z-index: 2;
+}
+.input-group-btn:first-child .btn,
+.input-group-btn:first-child .btn-group {
+  margin-right: -1px;
+}
+.input-group-btn:last-child .btn,
+.input-group-btn:last-child .btn-group {
+  z-index: 2;
+  margin-left: -1px;
+}
+.btn-group > bootstrap-button:first-child > .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn-group > bootstrap-button:last-child > .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-group > bootstrap-button:first-child:last-child > .btn {
+  border-radius: 4px;
+}
+.btn-group > bootstrap-button:not(:first-child):not(:last-child) > .btn{
+  border-radius: 0;
+}
+.btn-group > bootstrap-button:not(:first-child):not(:last-child) > .btn{
+  border-radius: 0;
+}
+.btn-group > bootstrap-button:not(:first-child):not(:last-child) > .btn + bootstrap-dropwodn-label {
+  border-radius: 0;
+}
+bootstrap-dropdown > bootstrap-button:first-child > .btn{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+bootstrap-dropdown > bootstrap-dropdown-label:nth-child(2) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left:-5px;
+  padding-left:5px;
+  padding-right:9px;
+}
+.btn-group-lg > bootstrap-button > .btn {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+.btn-group-sm > bootstrap-button > .btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.btn-group-xs > bootstrap-button > .btn {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+bootstrap-nav-bar, bootstrap-nav-bar-header, bootstrap-nav-bar-collapse{
+    display:block;
+}
+bootstrap-listgroup bootstrap-listgroup-item button.list-group-item{
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px!important;
+  border: 1px solid #ddd;
+  border-radius: 0px!important;
+}
+bootstrap-listgroup bootstrap-listgroup-item a.list-group-item{
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px!important;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0px!important;
+}
+bootstrap-listgroup bootstrap-listgroup-item:first-child button.list-group-item,
+bootstrap-listgroup bootstrap-listgroup-item:first-child a.list-group-item{
+  border-top-left-radius: 4px!important;
+  border-top-right-radius: 4px!important;
+  border-bottom-left-radius: 0px!important;
+  border-bottom-right-radius: 0px!important;
+}
+bootstrap-listgroup bootstrap-listgroup-item:last-child button.list-group-item,
+bootstrap-listgroup bootstrap-listgroup-item:last-child a.list-group-item{
+  margin-bottom: 0;
+   border-top-left-radius: 0px!important;
+  border-top-right-radius: 0px!important;
+  border-bottom-right-radius: 4px!important;
+  border-bottom-left-radius: 4px!important;
+}
