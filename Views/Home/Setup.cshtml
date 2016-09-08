@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Project Setup & Getting Started";
+}
+
+            <div class="top-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h1 id="setup">Setup</h1>
+                            <p>Project Setup of ASP .NET MVC Core Bootstrap Tag Helpers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9" role="main">
+
+                        <div class="component">
+                            <p>In this tutorial, you will learn how to integrate Tag Helpers based on Twitter's Bootstrap into an existing project. We will be using Microsoft Visual Studio 2015.</p>
+                        </div>
+
+                        <h2 id="create">1. Create a new ASP .NET Core Web Application</h2>
+                        <div class="component">
+                            <img width="800" alt="ASP .NET Core Project" src="~/tag-helpers/images/aspnetcore-net-project.png" /> <br /><br />
+                            <img alt="ASP .NET Web Application" src="~/tag-helpers/images/aspnetcore-webapplication.png" />
+                       </div>
+                 
+                        <h2 id="reference">2. Reference the Tag Helpers</h2>
+                        <div class="component">
+                            <p>Install the Tag Helper's <a href="https://www.nuget.org/packages/jQWidgets.AspNetCore.Mvc.Bootstrap.TagHelpers">Nuget package</a>.</p>
+                        </div>
+
+                        <h2 id="update">3. Update <code>_ViewImports.cshtml</code></h2>
+                        <div class="component">
+                            <p>Open the folder <code>Views</code> and then the file <code>_ViewImports.cshtml</code>. Add the following line to the bottom:</p>
+                            <div style="background-color: #EFF0F1;">
+                                <code>@@addTagHelper *, jQWidgets.AspNetCore.Mvc.Bootstrap.TagHelpers </code>
+                            </div>
+                            <p>This way the Tag Helpers are now "registered" for use.</p>
+                        </div>
+
+                        <h2 id="cssreference">4. Add a reference to <code>bootstrap.mvc.css</code></h2>
+                        <div class="component">
+                            <p>In the Tag Helpers download package you can also find the file <code>bootstrap.mvc.css</code>. It has to be referenced on the page where the Tag Helpers will appear. In our case, we add the file to the folder <code>wwwroot\css</code>:</p>
+                            <img src="/tag-helpers/images/bootstrap-mvc-css.png" />
+                            <p>and reference it in the file <code>Views\Shared\_Layout.cshtml</code>:</p>
+                            <div style="background-color: #EFF0F1;">
+                                <pre><code>&lt;environment names="Development"&gt;
+    &lt;link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" /&gt;
+    &lt;link rel="stylesheet" href="~/css/site.css" /&gt;
+                                <strong>&lt;link rel="stylesheet" href="~/css/bootstrap.mvc.css" /&gt;</strong>
+&lt;/environment></code></pre>
+                            </div>
+                        </div>
+
+                        <h2 id="build">5. Build the Solution</h2>
+                        <div class="component">
+                            <p>Click <strong>Build</strong> in the top menu bar of Visual Studio, then click <strong>Build Solution</strong> to Build the solution.</p>
+                        </div>
+
+                        <h2 id="addtopage">6. Add a Bootstrap Tag Helper to a Page</h2>
+                        <div class="component">
+                            <p>We can now add a Bootstrap Tag Helper to one of the views (pages). For example, we will add the &lt;bootstrap-alert&gt; Tag Helper to <code>Views\Home\About.cshtml</code>. While typing, IntelliSense suggest the existing Tag Helpers:</p>
+                            <p>If we add the following lines of code:</p>
+                            <div>
+                                <pre><code>&lt;bootstrap-alert class="alert-warning alert-dismissible fade in"&gt;
+    &lt;bootstrap-alert-close&gt;&lt;span aria-hidden="true"&gt;×&lt;/span&gt;&lt;/bootstrap-alert-close&gt;
+    &lt;strong&gt;Holy guacamole!&lt;/strong&gt; Best check yo self, you're not looking too good.
+&lt;/bootstrap-alert&gt;</code></pre>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-3 hidden-xs hidden-sm" role=complementary>
+                        <div id="myAffix" data-spy="affix" data-offset-top="300">
+                            <ul class="nav">
+                                <li><a href="#create">1. Create a new ASP .NET Core Web Application</a></li>
+                                <li><a href='#reference'>2. Reference the Tag Helpers</a></li>
+                                <li><a href='#update'>3. Update _ViewImports.cshtml</a> </li>
+                                <li><a href='#cssreference'>4. Reference bootstrap.mvc.css</a></li>
+                                <li><a href='#build'>5. Build</a></li>
+                                <li><a href='#addtopage'>6. Add Tag Helper</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+

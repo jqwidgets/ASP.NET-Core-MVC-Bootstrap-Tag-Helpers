@@ -1,0 +1,633 @@
+﻿@{
+    ViewData["Title"] = "Overview";
+}
+
+<div class="top-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 id="setup">Overview</h1>
+                <p>An overview of ASP .NET MVC Core Bootstrap Tag Helpers and how to info.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9" role="main">
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    var tocHidden = true;
+
+                    $.get('/tag-helpers/code-modal.htm', function (data) {
+                        $('#codeSample1').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-modal-button.htm', function (data) {
+                        $('#codeSample2').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-dropdown.htm', function (data) {
+                        $('#codeSample3').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-tab.htm', function (data) {
+                        $('#codeSample4').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-tooltip.htm', function (data) {
+                        $('#codeSample5').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-popover.htm', function (data) {
+                        $('#codeSample6').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-alert.htm', function (data) {
+                        $('#codeSample7').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-button.htm', function (data) {
+                        $('#codeSample8').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-collapse.htm', function (data) {
+                        $('#codeSample9').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-carousel.htm', function (data) {
+                        $('#codeSample10').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-nav.htm', function (data) {
+                        $('#codeSample11').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-badge.htm', function (data) {
+                        $('#codeSample12').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-list-group.htm', function (data) {
+                        $('#codeSample13').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-panel.htm', function (data) {
+                        $('#codeSample14').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-breadcrumbs.htm', function (data) {
+                        $('#codeSample15').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-label.htm', function (data) {
+                        $('#codeSample16').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-jumbotron.htm', function (data) {
+                        $('#codeSample17').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-page-header.htm', function (data) {
+                        $('#codeSample18').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-progress-bar.htm', function (data) {
+                        $('#codeSample19').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-media-object.htm', function (data) {
+                        $('#codeSample20').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-responsive-embed.htm', function (data) {
+                        $('#codeSample21').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-well.htm', function (data) {
+                        $('#codeSample22').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-input-group.htm', function (data) {
+                        $('#codeSample23').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-navbar.htm', function (data) {
+                        $('#codeSample24').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-pagination.htm', function (data) {
+                        $('#codeSample25').html(formatCode(data));
+                    }, 'text');
+                    $.get('/tag-helpers/code-thumbnail.htm', function (data) {
+                        $('#codeSample26').html(formatCode(data));
+                    }, 'text');
+                });
+            </script>
+
+            <h1 class="page-header">Bootstrap Tag helpers</h1>
+            <div class="component">
+                <p>Free ASP .NET Core Mvc Tag Helpers for all major Bootstrap Components and JavaScript plugins. Here you will find an overview of these Tag Helpers.</p>
+            </div>
+
+            <h2 id="modal">Modal</h2>
+            <p>To create a Bootstrap Modal, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample1" class="highlight"></div>
+                <p>To open the modal from a button, add the <strong>bootstrap-toggle-modal</strong> attribute to the button with the id of the modal as value:</p>
+                <div id="codeSample2" class="highlight"></div>
+                <h3>Related Tag Helpers:</h3>
+                <ul>
+                    <li>&lt;bootstrap-modal-header&gt; - denotes the Modal's header section.</li>
+                    <li>&lt;bootstrap-modal-body&gt; - denotes the Modal's content section.</li>
+                    <li>&lt;bootstrap-modal-footer&gt; - denotes the Modal's footer section.</li>
+                </ul>
+                <h3>Applicable attributes:</h3>
+                <ul>
+                    <li>Animation can be added to the Modal by adding the <strong>class</strong> "fade" to it.</li>
+                    <li><strong>data-backdrop</strong> - true (default)/false/"static" - includes a modal-backdrop element. Specify "static" for a backdrop which doesn't close the modal on click.</li>
+                    <li><strong>data-keyboard</strong> - true (default)/false - closes the modal when escape key is pressed.</li>
+                    <li><strong>data-show</strong> - true (default)/false - shows the modal when initialized.</li>
+                    <li><strong>size</strong> - "xs"/"sm"/"lg". If <strong>size</strong> is not set, the size of the widget will be normal.</li>
+                </ul>
+                <h3>Methods:</h3>
+                <code class="method">$().modal('toggle')</code><br />
+                <code class="method">$().modal('show')</code><br />
+                <code class="method">$().modal('hide')</code><br />
+                <code class="method">$().modal('handleUpdate')</code><br />
+
+                <h3>Events:</h3>
+                <code class="method">show.bs.modal</code><br />
+                <code class="method">shown.bs.modal</code><br />
+                <code class="method">hide.bs.modal</code><br />
+                <code class="method">hidden.bs.modal</code><br />
+                <code class="method">loaded.bs.modal</code><br />
+
+            </div>
+
+
+            <h2 id="dropdown">Dropdown</h2>
+            <p>To create a Bootstrap Dropdown, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample3" class="highlight"></div>
+                <p>You can add more Dropdown options by inserting more &lt;bootstrap-dropdown-menu-item&gt; Tag Helpers.</p>
+                <h3>Related Tag Helpers:</h3>
+                <ul>
+                    <li>&lt;bootstrap-dropdown-label&gt; - denotes the Dropdown's label (button). Its content can be set via the <strong>content</strong> attribute.</li>
+                    <li>&lt;bootstrap-dropdown-menu&gt; - denotes the container (popup) for the Dropdown's items. It has a <strong>labelledby</strong> attribute that should be set to the id of the &lt;bootstrap-dropdown-label&gt; to denote connection between them.</li>
+                    <li>&lt;bootstrap-dropdown-menu-item&gt; - denotes a Dropdown item.</li>
+                    <li>&lt;bootstrap-dropdown-menu-separator&gt; - denotes a separator between Dropdown items.</li>
+                </ul>
+                <h3>Methods:</h3>
+                <code class="method">$().dropdown('toggle')</code><br />
+
+                <h3>Events:</h3>
+                <code class="method">show.bs.dropdown</code><br />
+                <code class="method">shown.bs.dropdown</code><br />
+                <code class="method">hide.bs.dropdown</code><br />
+                <code class="method">hidden.bs.dropdown</code><br />
+
+            </div>
+
+            <h2 id="tab">Tab</h2>
+            <p>To create a Bootstrap togglable Tab, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample4" class="highlight"></div>
+                <p>To add more tabs to this sample Tab, insert &lt;bootstrap-tab&gt; Tag Helpers in &lt;bootstrap-tabs-nav&gt; and &lt;bootstrap-tab-pane&gt; Tag Helpers to &lt;bootstrap-tabs-content&gt;. These act as tab header and tab content sections respectively.</p>
+                <h3>Related Tag Helpers:</h3>
+                <ul>
+                    <li>&lt;bootstrap-tabs-nav&gt; - denotes the Tab's header section.</li>
+                    <li>&lt;bootstrap-tab&gt; - denotes a Tab's tab in the header section. The attribute <strong>active</strong> denotes if the tab is selected.</li>
+                    <li>&lt;bootstrap-tabs-content&gt; - denotes the Tab's content section.</li>
+                    <li>&lt;bootstrap-tab-pane&gt; - denotes a Tab's content panel in the content section. The attribute <strong>active</strong> denotes if the content panel is visible. If the <strong>class</strong> "fade" is added, selection animation will be enabled.</li>
+                </ul>
+                <h3>Methods:</h3>
+                <code class="method">$().tab('show')</code><br />
+
+                <h3>Events:</h3>
+                <code class="method">hide.bs.tab</code><br />
+                <code class="method">show.bs.tab</code><br />
+                <code class="method">hidden.bs.tab</code><br />
+                <code class="method">shown.bs.tab</code><br />
+
+            </div>
+
+
+            <h2 id="tooltip">Tooltip</h2>
+            <p>To create a Bootstrap Tooltip, add the attribute <strong>bootstrap-tooltip</strong> to an existing tag or Tag Helper. The value of the attribute specifies the tooltip's content. Supported tags are: &lt;div&gt;, &lt;img&gt;, &lt;span&gt;, &lt;nav&gt;, &lt;button&gt;, &lt;a&gt;, &lt;p&gt;, &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt; and &lt;h6&gt;</p>
+            <div class="component">
+                <div id="codeSample5" class="highlight"></div>
+                <h3>Applicable attributes:</h3>
+                <ul>
+                    <li><strong>data-animation</strong> - true (default)/false - apply a CSS fade transition to the tooltip.</li>
+                    <li><strong>data-container</strong> - string/false - appends the tooltip to a specific element. Example: <code>data-container="body"</code>.</li>
+                    <li><strong>data-delay</strong> - number/object - delay showing and hiding the tooltip (ms) - does not apply to manual trigger type. If a number is supplied, delay is applied to both hide/show. Object structure is: <code>delay: { "show": 500, "hide": 100 }</code>.</li>
+                    <li><strong>data-html</strong> - true/false (default) - insert HTML into the tooltip. If false, jQuery's text method will be used to insert content into the DOM. Use text if you're worried about XSS attacks.</li>
+                    <li><strong>data-placement</strong> - "top" (default)/"left"/"right"/"bottom"/"auto"/function - sets the tooltip's position relative to the host element. When "auto" is specified, it will dynamically reorient the tooltip. For example, if placement is "auto left", the tooltip will display to the left when possible, otherwise it will display right. When a function is used to determine the placement, it is called with the tooltip DOM node as its first argument and the triggering element DOM node as its second. The <code>this</code> context is set to the tooltip instance.</li>
+                    <li><strong>data-selector</strong> - string/false (default) - if a selector is provided, tooltip objects will be delegated to the specified targets. In practice, this is used to enable dynamic HTML content to have tooltips added.</li>
+                    <li><strong>data-trigger</strong> - "click"/"hover"/"focus"/"manual" (default is "hover focus") - how tooltip is triggered. You may pass multiple triggers; separate them with a space. "manual" cannot be combined with any other trigger.</li>
+                    <li><strong>data-viewport</strong> - string/object/function (default is <code>{ selector: 'body', padding: 0 }</code>) - keeps the tooltip within the bounds of this element. Example: <code>viewport: '#viewport'</code> or <code>{ "selector": "#viewport", "padding": 0 }</code>. If a function is given, it is called with the triggering element DOM node as its only argument. The <code>this</code> context is set to the tooltip instance.</li>
+                </ul>
+                <h3>Methods:</h3>
+                <code class="method">$().tooltip('show')</code><br />
+                <code class="method">$().tooltip('hide')</code><br />
+                <code class="method">$().tooltipal('toggle')</code><br />
+                <code class="method">$().tooltip('destroy')</code><br />
+
+                <h3>Events:</h3>
+                <code class="method">show.bs.tooltip</code><br />
+                <code class="method">shown.bs.tooltip</code><br />
+                <code class="method">hide.bs.tooltip</code><br />
+                <code class="method">hidden.bs.tooltip</code><br />
+                <code class="method">inserted.bs.tooltip</code><br />
+
+            </div>
+
+            <h2 id="popover">Popover</h2>
+            <p>To create a Bootstrap Popover, add the attribute <strong>bootstrap-popover</strong> to an existing tag or Tag Helper. Supported tags are: &lt;div&gt;, &lt;img&gt;, &lt;span&gt;, &lt;nav&gt;, &lt;button&gt;, &lt;a&gt;, &lt;p&gt;, &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt; and &lt;h6&gt;</p>
+            <div class="component">
+                <div id="codeSample6" class="highlight"></div>
+                <h3>Applicable attributes:</h3>
+                <ul>
+                    <li><strong>data-animation</strong> - true (default)/false - apply a CSS fade transition to the popover.</li>
+                    <li><strong>data-container</strong> - string/false - appends the popover to a specific element. Example: <code>data-container="body"</code>.</li>
+                    <li><strong>data-content</strong> - string (default is "")/function - sets the popover's content. If a function is given, it will be called with its this reference set to the element that the popover is attached to.</li>
+                    <li><strong>data-delay</strong> - number/object - delay showing and hiding the popover (ms) - does not apply to manual trigger type. If a number is supplied, delay is applied to both hide/show. Object structure is: <code>delay: { "show": 500, "hide": 100 }</code>.</li>
+                    <li><strong>data-html</strong> - true/false (default) - insert HTML into the popover. If false, jQuery's text method will be used to insert content into the DOM. Use text if you're worried about XSS attacks.</li>
+                    <li><strong>data-placement</strong> - "top" (default)/"left"/"right"/"bottom"/"auto"/function - sets the popover's position relative to the host element. When "auto" is specified, it will dynamically reorient the popover. For example, if placement is "auto left", the popover will display to the left when possible, otherwise it will display right. When a function is used to determine the placement, it is called with the popover DOM node as its first argument and the triggering element DOM node as its second. The <code>this</code> context is set to the popover instance.</li>
+                    <li><strong>data-selector</strong> - string/false (default) - if a selector is provided, popover objects will be delegated to the specified targets. In practice, this is used to enable dynamic HTML content to have tooltips added.</li>
+                    <li><strong>data-title</strong> (alternative to <strong>title</strong>) - string (default is "")/function - sets the popover's title. If a function is given, it will be called with its this reference set to the element that the popover is attached to.</li>
+                    <li><strong>data-trigger</strong> - "click"/"hover"/"focus"/"manual" (default is "hover focus") - how popover is triggered. You may pass multiple triggers; separate them with a space. "manual" cannot be combined with any other trigger.</li>
+                    <li><strong>data-viewport</strong> - string/object/function (default is <code>{ selector: 'body', padding: 0 }</code>) - keeps the popover within the bounds of this element. Example: <code>viewport: '#viewport'</code> or <code>{ "selector": "#viewport", "padding": 0 }</code>. If a function is given, it is called with the triggering element DOM node as its only argument. The <code>this</code> context is set to the popover instance.</li>
+                    <li><strong>title</strong> (alternative to <strong>data-title</strong>) - string (default is "")/function - sets the popover's title. If a function is given, it will be called with its this reference set to the element that the popover is attached to.</li>
+                </ul>
+                <h3>Methods:</h3>
+                <code class="method">$().popover(show)</code><br />
+                <code class="method">$().popover(hide)</code><br />
+                <code class="method">$().popover(toggle)</code><br />
+                <code class="method">$().popover(destroy)</code><br />
+
+
+                <h3>Events:</h3>
+                <code class="method">show.bs.popover</code><br />
+                <code class="method">shown.bs.popover</code><br />
+                <code class="method">hide.bs.popover</code><br />
+                <code class="method">hidden.bs.popover</code><br />
+                <code class="method">inserted.bs.popover</code><br />
+
+            </div>
+
+            <h2 id="alert">Alert</h2>
+            <p>To create a Bootstrap Alert, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample7" class="highlight"></div>
+                <h3>Related Tag Helpers:</h3>
+                <ul>
+                    <li>&lt;bootstrap-alert-close&gt; - denotes the Alert's close button.</li>
+                </ul>
+                <h3>Applicable attributes:</h3>
+                <ul>
+                    <li>
+                        The color scheme of the Alert can be changed by adding the <strong>class</strong> "alert-success", "alert-info", "alert-warning" or "alert-danger".<br />
+                        To denote that the Alert can be closed, add the "alert-dismissible" class.<br />
+                        Enable animation by adding the classes "fade", "in" and/or "out".
+                    </li>
+                </ul>
+                <h3>Methods:</h3>
+                <code class="method">$().alert('close')</code><br />
+
+                <h3>Events:</h3>
+                <code class="method">close.bs.alert</code><br />
+                <code class="method">closed.bs.alert</code><br />
+
+            </div>
+
+
+            <h2 id="button">Button</h2>
+            <p>To create a Bootstrap Button, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample8" class="highlight"></div>
+                <h3>Related Tag Helpers:</h3>
+                <ul>
+                    <li>&lt;bootstrap-button-group&gt; - enclose several &lt;bootstrap-button&gt; Tag Helpers in this Tag Helper to create a button group.</li>
+                </ul>
+                <h3>Applicable attributes:</h3>
+                <ul>
+                    <li><strong>autocomplete</strong> - set this attribute to "off" for cross-browser compatibility.</li>
+                    <li><strong>data-toggle</strong> - "button" (for a single button)/"buttons" (for a button group).</li>
+                    <li>The <strong>class</strong> "active" has to be applied to pre-toggled buttons. To change the button's color scheme (template), add the class "btn-default", "btn-primary", "btn-success", "btn-info", "btn-warning", "btn-danger" or "btn-link".</li>
+                </ul>
+                <h3>Methods:</h3>
+                <code class="method">$().button('toggle')</code><br />
+                <code class="method">$().button('reset')</code><br />
+
+            </div>
+
+            <h2 id="collapse">Collapse</h2>
+            <p>To create a Bootstrap Collapse, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample9" class="highlight"></div>
+                <h3>Applicable attributes:</h3>
+                <ul>
+                    <li><strong>data-parent</strong> - false (default)/selector - if a selector is provided, then all collapsible elements under the specified parent will be closed when this collapsible item is shown.</li>
+                    <li><strong>data-toggle</strong> - toggles the collapsible element on invocation.</li>
+                    <li><strong>trigger</strong> - selector - denotes the element that toggles the Collapse.</li>
+                </ul>
+                <h3>Methods:</h3>
+                <code class="method">$().collapse('toggle')</code><br />
+                <code class="method">$().collapse('show')</code><br />
+                <code class="method">$().collapse('hide')</code><br />
+
+                <h3>Events:</h3>
+                <code class="method">show.bs.collapse</code><br />
+                <code class="method">shown.bs.collapse</code><br />
+                <code class="method">hide.bs.collapse</code><br />
+                <code class="method">hidden.bs.collapse</code><br />
+
+            </div>
+
+            <h2 id="carousel">Carousel</h2>
+            <p>To create a Bootstrap Carousel, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample10" class="highlight"></div>
+                <h3>Related Tag Helpers:</h3>
+                <ul>
+                    <li>&lt;bootstrap-carousel-indicators&gt; - denotes the container of Carousel's indicators.</li>
+                    <li>
+                        &lt;bootstrap-carousel-indicator&gt; - denotes a Carousel indicator. Applicable attributes:<br />
+                        <ul>
+                            <li><strong>active</strong> - denotes the initially selected indicator.</li>
+                            <li><strong>target</strong> - has to be set to the selector of the Carousel that the indicator controls.</li>
+                        </ul>
+                    </li>
+                    <li>&lt;bootstrap-carousel-items&gt; - denotes the container of Carousel's items.</li>
+                    <li>&lt;bootstrap-carousel-item&gt; - denotes a Carousel item. Its <strong>active</strong> attribute denotes the initially shown item.</li>
+                    <li>&lt;bootstrap-carousel-caption&gt; - specifies a Carousel item's caption.</li>
+                    <li>
+                        &lt;bootstrap-carousel-control&gt; - denotes a Carousel control arrow. Applicable attributes:<br />
+                        <ul>
+                            <li><strong>slide</strong> - specifies which item to go to when the arrow is clicked ("prev"/"next").</li>
+                            <li><strong>target</strong> - has to be set to the selector of the Carousel that the arrow controls.</li>
+                            <li><strong>type</strong> - specifies the position of the arrow ("left"/"right").</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3>Applicable attributes:</h3>
+                <ul>
+                    <li>Animation can be added to the Carousel by adding the <strong>class</strong> "slide" to it.</li>
+                    <li><strong>data-interval</strong> - number (default 5000)/false - the amount of time to delay between automatically cycling an item. If false, carousel will not automatically cycle.</li>
+                    <li><strong>data-pause</strong> - string (default "hover") - pauses the cycling of the carousel on mouseenter and resumes the cycling of the carousel on mouseleave.</li>
+                    <li><strong>data-wrap</strong> - true (default)/false - whether the carousel should cycle continuously or have hard stops.</li>
+                    <li><strong>data-keyboard</strong> - true (default)/false - whether the carousel should react to keyboard events.</li>
+                </ul>
+                <h3>Methods:</h3>
+                <code class="method">$().carousel('cycle')</code><br />
+                <code class="method">$().carousel('pause')</code><br />
+                <code class="method">$().carousel(number)</code> <em>number</em> (pass it to the .carousel() function)<br />
+                <code class="method">$().carousel('prev')</code><br />
+                <code class="method">$().carousel('next')</code><br />
+
+                <h3>Events:</h3>
+                <code class="method">slide.bs.carousel</code><br />
+                <code class="method">slid.bs.carousel</code><br />
+
+            </div>
+
+            <h1 id="components" class="page-header">Other Bootstrap Components</h1>
+            <h2 id="inputGroup">Input group</h2>
+            <p>To create a Bootstrap Input group, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample23" class="highlight"></div>
+
+                <h3>Applicable classes:</h3>
+                <code>input-group-sm</code>,  <code>input-group-lg</code>
+
+                <h3>Related Tag Helpers:</h3>
+                <ul>
+                    <li>&lt;bootstrap-input-group-addon&gt; - denotes an Input group addon.</li>
+                </ul>
+                <p>To denote that the input and the &lt;bootstrap-input-group-addon&gt; Tag Helper in the Input group are connected, set the input's "aria-describedby" attribute to the id of the addon.</p>
+
+                <h4 id="nav">Nav</h4>
+                <p>To create a Bootstrap Nav, add the following Tag Helper:</p>
+                <div id="codeSample11" class="highlight"></div>
+
+                <h3>Applicable classes:</h3>
+                <code>nav-tabs</code> (alternative to "nav-pills"), <code>nav-pills</code> (alternative to "nav-tabs"), <code>nav-justified</code>, <code>"nav-stacked</code>
+
+                <h3>Related Tag Helpers:</h3>
+                <ul>
+                    <li>
+                        &lt;bootstrap-nav-item&gt; - denotes a Nav item.<br />
+                        <b>Applicable classes:</b>
+                        <code>active</code> - if added, the item will be initially selected, <code>disabled</code> - if added, the item selection will be disabled.
+
+                    </li>
+                </ul>
+            </div>
+
+            <h2 id="navbar">Navbar</h2>
+            <p>To create a Bootstrap Navbar, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample24" class="highlight"></div>
+                <h3>Applicable classes:</h3>
+                <code>navbar-inverse</code> - applies an inverted color scheme to the Navbar.
+
+                <h3>Related Tag Helpers:</h3>
+                <ul>
+                    <li>&lt;bootstrap-nav-bar-header&gt; - denotes the Navbar header.</li>
+                    <li>&lt;bootstrap-nav-bar-collapse&gt; - denotes the Navbar collapse.</li>
+                </ul>
+                <h3>Classes applicable to Navbar inner elements:</h3>
+                <code>navbar-brand</code>,
+                <code>navbar-toggle</code>,
+                <code>navbar-form</code>,
+                <code>navbar-left</code> - aligns element to the left of the Navbar,
+                <code>navbar-right</code> - aligns element to the right of the Navbar,
+                <code>navbar-btn</code>,
+                <code>navbar-text</code>
+
+            </div>
+
+            <h2 id="breadcrumbs">Breadcrumbs</h2>
+            <p>To create a Bootstrap Breadcrumbs, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample15" class="highlight"></div>
+                <h3>Related Tag Helpers:</h3>
+                <ul>
+                    <li>
+                        &lt;bootstrap-breadcrumb-item&gt; - denotes a Breadcrumb (item). <br />
+                        <b>Applicable classes:</b>
+                        <code>pagination-sm</code> - if added, the item will be highlighted.
+                    </li>
+                </ul>
+
+                <h2 id="pagination">Pagination</h2>
+                <p>To create a Bootstrap Pagination, add the following Tag Helper:</p>
+                <div id="codeSample25" class="highlight"></div>
+                <h3>Applicable classes:</h3>
+                <code>pagination-sm</code>, <code>pagination-lg</code>
+
+                <h3>Applicable attributes:</h3>
+                <ul>
+                    <li>"type" - if set to "pager", denotes only a pager with "previous" and "next" links.</li>
+                </ul>
+                <h3>Related Tag Helpers:</h3>
+                <ul>
+                    <li>
+                        &lt;bootstrap-pagination-item&gt; - denotes a Pagination item.<br />
+                        <b>Applicable classes:</b>
+                        <code>active</code>, <code>disabled</code>, <code>previous</code>, <code>next</code>
+                    </li>
+                </ul>
+            </div>
+
+            <h2 id="label">Label</h2>
+            <p>To create a Bootstrap Label, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample16" class="highlight"></div>
+                <h3>Applicable classes:</h3>
+                <code>label-default</code>, <code>label-primary</code>, <code>label-success</code>, <code>label-info</code>, <code>label-warning</code>, <code>label-danger</code>
+
+            </div>
+
+            <h2 id="badge">Badge</h2>
+            <p>To create a Bootstrap Badge, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample12" class="highlight"></div>
+            </div>
+
+            <h2 id="jumbotron">Jumbotron</h2>
+            <p>To create a Bootstrap Jumbotron, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample17" class="highlight"></div>
+            </div>
+
+            <h2 id="pageHeader">Page header</h2>
+            <p>To create a Bootstrap Page header, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample18" class="highlight"></div>
+            </div>
+
+            <h2 id="thumbnail">Thumbnail</h2>
+            <p>To create a Bootstrap Thumbnail, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample26" class="highlight"></div>
+                <h3>Applicable attributes:</h3>
+                <ul>
+                    <li>"href" (optional)</li>
+                    <li>"target" (optional)</li>
+                </ul>
+            </div>
+
+            <h2 id="progressBar">Progress bar</h2>
+            <p>To create a Bootstrap Progress bar, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample19" class="highlight"></div>
+                <h3>Related Tag Helpers:</h3>
+                <ul>
+                    <li>
+                        &lt;bootstrap-progress-bar&gt; - denotes a progress bar.<br />
+                        <b>Applicable classes:</b>
+                        <code>active</code> - enables animation (requires "progress-bar-striped"),
+                        <code>progress-bar-success</code>,
+                        <code>progress-bar-info</code>,
+                        <code>progress-bar-warning</code>,
+                        <code>progress-bar-danger</code>,
+                        <code>progress-bar-striped</code>
+
+                        <h4> Applicable attributes:</h4>
+                        <ul>
+                            <li>"value"</li>
+                            <li>"minwidth"</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h2 id="mediaObject">Media object</h2>
+            <p>To create a Bootstrap Media object, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample20" class="highlight"></div>
+                <h3>Related Tag Helpers:</h3>
+                <ul>
+                    <li>
+                        &lt;bootstrap-media-left&gt;<br />
+                        <b>Applicable classes:</b>
+
+                        <code>media-top</code>, <code>media-middle</code>, <code>media-middle</code>
+                    </li>
+                    <li>&lt;bootstrap-media-body&gt;</li>
+                    <li>
+                        &lt;bootstrap-media-right&gt;. <br />
+                        <b>Applicable classes:</b>
+                        <code>media-top</code>, <code>media-middle</code>, <code>media-middle</code>
+                    </li>
+                    <li>&lt;bootstrap-media-list&gt; - wrap nested &lt;bootstrap-media&gt; Tag Helpers inside this Tag Helper to create a "nested list"-like structure of media objects.</li>
+                </ul>
+                <p>The class "media-heading" should be applied to heading tags inside &lt;bootstrap-media-body&gt;. The class "media-object" should be applied to images inside &lt;bootstrap-media-left&gt; and &lt;bootstrap-media-right&gt;.</p>
+            </div>
+
+            <h2 id="listGroup">List group</h2>
+            <p>To create a Bootstrap List group, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample13" class="highlight"></div>
+                <h3>Related Tag Helpers:</h3>
+                <ul>
+                    <li>
+                        &lt;bootstrap-listgroup-item&gt; - denotes a List group item. <br />
+                        <b>Applicable classes:</b>
+                        <code>active</code> - if added, the item will be highlighted,
+                        <code>disabled</code> - if added, the item will have a disabled visual effect,
+                        <code>list-group-item-success</code>,
+                        <code>list-group-item-info</code>,
+                        <code>list-group-item-warning</code>,
+                        <code>list-group-item-danger</code>
+                        <code>list-group-item-success</code>
+                    </li>
+                </ul>
+            </div>
+
+            <h2 id="panel">Panel</h2>
+            <p>To create a Bootstrap Panel, add the following Tag Helper:</p>
+            <div class="component">
+                <div id="codeSample14" class="highlight"></div>
+                <h3>Applicable classes:</h3>
+                <code>panel-default</code>, <code>panel-primary</code>, <code>panel-success</code>, <code>panel-info</code>, <code>panel-warning</code>, <code>panel-danger</code>
+
+                <h3>Related Tag Helpers:</h3>
+                <ul>
+                    <li>&lt;bootstrap-panel-header&gt; - denotes the header section of the Panel.</li>
+                    <li>&lt;bootstrap-panel-body&gt; - denotes the content section of the Panel.</li>
+                    <li>&lt;bootstrap-panel-footer&gt; - denotes the footer section of the Panel.</li>
+                </ul>
+            </div>
+
+            <h2 id="responsiveEmbed">Responsive embed</h2>
+            <p>To create a Bootstrap Responsive embed, add the class "bootstrap-embed-responsive" to an iframe, embed, object or video element:</p>
+            <div class="component">
+                <div id="codeSample21" class="highlight"></div>
+
+                <h2 id="well">Well</h2>
+                <p>To create a Bootstrap Well, add the following Tag Helper:</p>
+                <div id="codeSample22" class="highlight"></div>
+                <h3>Applicable classes:</h3>
+                <code>well-sm</code>, <code>well-lg</code>
+            </div>
+
+
+        </div>
+        <div class="col-md-3 hidden-xs hidden-sm" role=complementary>
+            <div id="myAffix" data-spy="affix" data-offset-top="300">
+                <ul class="nav">
+                    <li><a href="#javascript">Bootstrap plugins</a></li>
+                    <li><a href="#modal">Modal</a></li>
+                    <li><a href="#dropdown">Dropdown</a></li>
+                    <li><a href="#tab">Tab</a></li>
+                    <li><a href="#tooltip">Tooltip</a></li>
+                    <li><a href="#popover">Popover</a></li>
+                    <li><a href="#alert">Alert</a></li>
+                    <li><a href="#button">Button</a></li>
+                    <li><a href="#collapse">Collapse</a></li>
+                    <li><a href="#carousel">Carousel</a></li>
+                    <li><a href="#components">Other Bootstrap Components</a></li>
+                    <li><a href="#inputGroup">Input group</a></li>
+                    <li><a href="#nav">Nav</a></li>
+                    <li><a href="#navbar">Navbar</a></li>
+                    <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+                    <li><a href="#pagination">Pagination</a></li>
+                    <li><a href="#label">Label</a></li>
+                    <li><a href="#badge">Badge</a></li>
+                    <li><a href="#jumbotron">Jumbotron</a></li>
+                    <li><a href="#pageHeader">Page header</a></li>
+                    <li><a href="#thumbnail">Thumbnail</a></li>
+                    <li><a href="#progressBar">Progress bar</a></li>
+                    <li><a href="#mediaObject">Media object</a></li>
+                    <li><a href="#listGroup">List group</a></li>
+                    <li><a href="#panel">Panel</a></li>
+                    <li><a href="#responsiveEmbed">Responsive embed</a></li>
+                    <li><a href="#well">Well</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+

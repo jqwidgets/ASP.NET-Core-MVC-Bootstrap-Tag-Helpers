@@ -1,0 +1,2027 @@
+﻿@{
+    ViewData["Title"] = "Basic Tag Helpers";
+}
+
+<div class="top-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 id="setup">Basic Tag Helpers</h1>
+                <p>Over a dozen reusable small tag helpers built to provide dropdowns, input groups, navigation,alerts, and much more.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9" role="main">
+
+            <h1 id="dropdowns" class="page-header">Dropdowns</h1>
+            <p>Toggleable, contextual menu for displaying lists of links. Made interactive with the <a href="/Home/JavaScript#dropdowns">dropdown JavaScript plugin</a>.</p>
+
+            <div class="component">
+                <h2>Basic example</h2>
+                <p>Wrap the dropdown's trigger and the dropdown menu within <code>&lt;bootstrap-dropdown&gt;</code> MVC6 tag helper. Then add the menu's HTML.</p>
+                    <div class="example">
+                        <bootstrap-dropdown>
+                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-default" content=" Dropdown "></bootstrap-dropdown-label>
+                            <bootstrap-dropdown-menu labelledby="newDropDown">
+                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                            </bootstrap-dropdown-menu>
+                        </bootstrap-dropdown>
+                    </div>
+
+                    <h2>Drop up</h2>
+                    <p>Dropdown menus can be changed to expand upwards (instead of downwards) by wrapping in <code>&lt;bootstrap-dropup&gt;</code> MVC6 tag helper.</p>
+                    <div class="example">
+                        <bootstrap-dropup>
+                            <bootstrap-dropdown>
+                                <bootstrap-dropdown-label id="newDropDown" class="btn btn-default" content=" Dropup "></bootstrap-dropdown-label>
+                                <bootstrap-dropdown-menu labelledby="newDropDown">
+                                    <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                </bootstrap-dropdown-menu>
+                            </bootstrap-dropdown>
+                        </bootstrap-dropup>
+                    </div>
+
+
+                    <h2>Alignment</h2>
+                    <p>By default, a dropdown menu is automatically positioned 100% from the top and along the left side of its parent. Add <code>.dropdown-menu-right</code> to a <code>&lt;bootstrap-dropdown-menu&gt;</code> to right align the dropdown menu.</p>
+                    <div class="example">
+                        <bootstrap-dropdown>
+                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-default" content=" Dropdown "></bootstrap-dropdown-label>
+                            <bootstrap-dropdown-menu class="dropdown-menu-right" labelledby="newDropDown">
+                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                            </bootstrap-dropdown-menu>
+                        </bootstrap-dropdown>
+                    </div>
+
+
+                    <h2>Headers</h2>
+                    <p>Add a header to label sections of actions in any dropdown menu.</p>
+                    <div class="example">
+                        <bootstrap-dropdown>
+                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-default" content=" Dropdown "></bootstrap-dropdown-label>
+                            <bootstrap-dropdown-menu labelledby="newDropDown">
+                                <bootstrap-dropdown-menu-header>Dropdown header</bootstrap-dropdown-menu-header>
+                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-header>Dropdown header</bootstrap-dropdown-menu-header>
+                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                            </bootstrap-dropdown-menu>
+                        </bootstrap-dropdown>
+                    </div>
+
+
+                    <h2>Divider</h2>
+                    <p>Add a divider to separate series of links in a dropdown menu.</p>
+                    <div class="example">
+                        <bootstrap-dropdown>
+                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-default" content=" Dropdown "></bootstrap-dropdown-label>
+                            <bootstrap-dropdown-menu labelledby="newDropDown">
+                                <bootstrap-dropdown-menu-header>Dropdown header</bootstrap-dropdown-menu-header>
+                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                            </bootstrap-dropdown-menu>
+                        </bootstrap-dropdown>
+                    </div>
+
+
+                    <h2>Disabled menu items</h2>
+                    <p>Add <code>.disabled</code> to a <code>&lt;bootstrap-dropdown-menu-item&gt;</code> in the dropdown to disable the link.</p>
+                    <div class="example">
+                        <bootstrap-dropdown>
+                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-default" content=" Dropdown "></bootstrap-dropdown-label>
+                            <bootstrap-dropdown-menu labelledby="newDropDown">
+                                <bootstrap-dropdown-menu-item><a href="#">Regular link</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item class="disabled"><a href="#">Disabled link</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Another link</a></bootstrap-dropdown-menu-item>
+                            </bootstrap-dropdown-menu>
+                        </bootstrap-dropdown>
+                    </div>
+             </div>
+
+
+
+            <h1 id="btn-groups" class="page-header">Button groups</h1>
+            <p>Group a series of buttons together on a single line with the button group. Add on optional JavaScript radio and checkbox style behavior with <a href="/Home/JavaScript#buttons">our buttons plugin</a>.</p>
+
+            <div class="component">
+                <h2>Basic example</h2>
+                <p>Wrap a series of buttons with <code>.btn</code> in <code>&lt;bootstrap-button-group&gt;</code> tag helper.</p>
+                <div class="example">
+                    <bootstrap-button-group>
+                        <bootstrap-button type="button" class="btn btn-default" autocomplete="off"><input type="checkbox" autocomplete="off">Left</bootstrap-button>
+                        <bootstrap-button type="button" class="btn btn-default" autocomplete="off"><input type="checkbox" autocomplete="off">Middle</bootstrap-button>
+                        <bootstrap-button type="button" class="btn btn-default" autocomplete="off"><input type="checkbox" autocomplete="off">Right</bootstrap-button>
+                    </bootstrap-button-group>
+                    </div>
+
+
+                    <h2>Button toolbar</h2>
+                    <p>Combine sets of <code>&lt;bootstrap-button-group&gt;</code> into a <code>&lt;bootstrap-button-toolbar&gt;</code> for more complex components.</p>
+                    <div class="example">
+                        <bootstrap-button-toolbar aria-label="Toolbar with button groups">
+                            <bootstrap-button-group aria-label="First group">
+                                <bootstrap-button type="button" class="btn btn-default">1</bootstrap-button>
+                                <bootstrap-button type="button" class="btn btn-default">2</bootstrap-button>
+                                <bootstrap-button type="button" class="btn btn-default">3</bootstrap-button>
+                                <bootstrap-button type="button" class="btn btn-default">4</bootstrap-button>
+                            </bootstrap-button-group>
+                            <bootstrap-button-group aria-label="Second group">
+                                <bootstrap-button type="button" class="btn btn-default">5</bootstrap-button>
+                                <bootstrap-button type="button" class="btn btn-default">6</bootstrap-button>
+                                <bootstrap-button type="button" class="btn btn-default">7</bootstrap-button>
+                            </bootstrap-button-group>
+                            <bootstrap-button-group aria-label="Third group">
+                                <bootstrap-button type="button" class="btn btn-default">8</bootstrap-button>
+                            </bootstrap-button-group>
+                        </bootstrap-button-toolbar>
+                    </div>
+
+
+                    <h2>Sizing</h2>
+                    <p>Instead of applying button sizing classes to every button in a group, just add <code>.btn-group-*</code> to each <code>&lt;bootstrap-button-group&gt;</code>, including when nesting multiple groups.</p>
+                    <div class="example">
+                        <bootstrap-button-group class="btn-group-lg">
+                            <bootstrap-button type="button" class="btn btn-default">Left</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-default">Middle</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-default">Right</bootstrap-button>
+                        </bootstrap-button-group>
+                        <br /><br />
+                        <bootstrap-button-group>
+                            <bootstrap-button type="button" class="btn btn-default">Left</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-default">Middle</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-default">Right</bootstrap-button>
+                        </bootstrap-button-group>
+                        <br /><br />
+                        <bootstrap-button-group class="btn-group-sm">
+                            <bootstrap-button type="button" class="btn btn-default">Left</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-default">Middle</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-default">Right</bootstrap-button>
+                        </bootstrap-button-group>
+                        <br /><br />
+                        <bootstrap-button-group class="btn-group-xs">
+                            <bootstrap-button type="button" class="btn btn-default">Left</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-default">Middle</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-default">Right</bootstrap-button>
+                        </bootstrap-button-group>
+                    </div>
+
+
+                    <h2>Nesting</h2>
+                    <p>Place a <code>&lt;bootstrap-button-group&gt;</code> within another <code>&lt;bootstrap-button-group&gt;</code> when you want dropdown menus mixed with a series of buttons.</p>
+                    <div class="example">
+                        <bootstrap-button-group>
+                            <bootstrap-button type="button" class="btn btn-default" autocomplete="off">1</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-default" autocomplete="off">2</bootstrap-button>
+                            <bootstrap-button-group>
+                                <bootstrap-dropdown class="dropdown">
+                                    <bootstrap-dropdown-label id="newDropDown" class="btn btn-default dropdown-toggle" content=" Dropdown "></bootstrap-dropdown-label>
+                                    <bootstrap-dropdown-menu labelledby="newDropDown">
+                                        <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                        <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                    </bootstrap-dropdown-menu>
+                                </bootstrap-dropdown>
+                            </bootstrap-button-group>
+                        </bootstrap-button-group>
+                    </div>
+
+
+                    <h2>Vertical variation</h2>
+                    <p>Make a set of buttons appear vertically stacked rather than horizontally. <strong class="text-danger">Split button dropdowns are not supported here.</strong></p>
+                    <div class="example">
+                        <bootstrap-button-group orientation="vertical" style="width:110px;">
+                            <bootstrap-button type="button" class="btn btn-default" autocomplete="off">Button</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-default" autocomplete="off">Button</bootstrap-button>
+                            <bootstrap-dropdown class="dropdown">
+                                <bootstrap-dropdown-label id="newDropDown" class="btn btn-default dropdown-toggle" content=" Dropdown "></bootstrap-dropdown-label>
+                                <bootstrap-dropdown-menu labelledby="newDropDown">
+                                    <bootstrap-dropdown-menu-item><a href="#">Dropdown link</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-item><a href="#">Dropdown link</a></bootstrap-dropdown-menu-item>
+                                </bootstrap-dropdown-menu>
+                            </bootstrap-dropdown>
+                            <bootstrap-button type="button" class="btn btn-default" autocomplete="off">Button</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-default" autocomplete="off">Button</bootstrap-button>
+                            <bootstrap-dropdown class="dropdown">
+                                <bootstrap-dropdown-label id="newDropDown" class="btn btn-default dropdown-toggle" content=" Dropdown "></bootstrap-dropdown-label>
+                                <bootstrap-dropdown-menu labelledby="newDropDown">
+                                    <bootstrap-dropdown-menu-item><a href="#">Dropdown link</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-item><a href="#">Dropdown link</a></bootstrap-dropdown-menu-item>
+                                </bootstrap-dropdown-menu>
+                            </bootstrap-dropdown>
+                            <bootstrap-dropdown class="dropdown">
+                                <bootstrap-dropdown-label id="newDropDown" class="btn btn-default dropdown-toggle" content=" Dropdown "></bootstrap-dropdown-label>
+                                <bootstrap-dropdown-menu labelledby="newDropDown">
+                                    <bootstrap-dropdown-menu-item><a href="#">Dropdown link</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-item><a href="#">Dropdown link</a></bootstrap-dropdown-menu-item>
+                                </bootstrap-dropdown-menu>
+                            </bootstrap-dropdown>
+                            <bootstrap-dropdown class="dropdown">
+                                <bootstrap-dropdown-label id="newDropDown" class="btn btn-default dropdown-toggle" content=" Dropdown "></bootstrap-dropdown-label>
+                                <bootstrap-dropdown-menu labelledby="newDropDown">
+                                    <bootstrap-dropdown-menu-item><a href="#">Dropdown link</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-item><a href="#">Dropdown link</a></bootstrap-dropdown-menu-item>
+                                </bootstrap-dropdown-menu>
+                            </bootstrap-dropdown>
+                        </bootstrap-button-group>
+                    </div>
+
+
+                    <h2>Justified button groups</h2>
+                    <p>Make a group of buttons stretch at equal sizes to span the entire width of its parent. Also works with button dropdowns within the button group.</p>
+                    <div class="example">
+                        <bootstrap-button-group class="btn-group-justified">
+                            <bootstrap-button type="button" class="btn btn-default" autocomplete="off">Left</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-default" autocomplete="off">Middle</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-default" autocomplete="off">Right</bootstrap-button>
+                        </bootstrap-button-group>
+
+                        <br /><br />
+
+                        <bootstrap-button-group class="btn-group-justified">
+                            <bootstrap-button type="button" class="btn btn-default" autocomplete="off">Left</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-default" autocomplete="off">Middle</bootstrap-button>
+                            <bootstrap-button-group>
+                                <bootstrap-dropdown class="dropdown">
+                                    <bootstrap-dropdown-label id="newDropDown" class="btn btn-default dropdown-toggle" content=" Dropdown "></bootstrap-dropdown-label>
+                                    <bootstrap-dropdown-menu labelledby="newDropDown">
+                                        <bootstrap-dropdown-menu-item><a href="#">Dropdown link</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-item><a href="#">Dropdown link</a></bootstrap-dropdown-menu-item>
+                                    </bootstrap-dropdown-menu>
+                                </bootstrap-dropdown>
+                            </bootstrap-button-group>
+                        </bootstrap-button-group>
+                    </div>
+                </div>
+
+
+
+            <h1 id="btn-dropdowns" class="page-header">Button dropdowns</h1>
+            <p>Use any button to trigger a dropdown menu providing the proper menu markup.</p>
+
+            <div class="component">
+                <h2>Single button dropdowns</h2>
+                <p>Turn a button into a dropdown toggle with some basic markup changes.</p>
+                <div class="example">
+                    <bootstrap-dropdown>
+                        <bootstrap-dropdown-label id="newDropDown" class="btn btn-default dropdown-toggle" content=" Default "></bootstrap-dropdown-label>
+                        <bootstrap-dropdown-menu labelledby="newDropDown">
+                            <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                            <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                        </bootstrap-dropdown-menu>
+                    </bootstrap-dropdown>
+
+                    <bootstrap-dropdown>
+                        <bootstrap-dropdown-label id="newDropDown" class="btn btn-primary dropdown-toggle" content=" Primary "></bootstrap-dropdown-label>
+                        <bootstrap-dropdown-menu labelledby="newDropDown">
+                            <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                            <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                        </bootstrap-dropdown-menu>
+                    </bootstrap-dropdown>
+
+                    <bootstrap-dropdown>
+                        <bootstrap-dropdown-label id="newDropDown" class="btn btn-success dropdown-toggle" content=" Success "></bootstrap-dropdown-label>
+                        <bootstrap-dropdown-menu labelledby="newDropDown">
+                            <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                            <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                        </bootstrap-dropdown-menu>
+                    </bootstrap-dropdown>
+
+                    <bootstrap-dropdown>
+                        <bootstrap-dropdown-label id="newDropDown" class="btn btn-info dropdown-toggle" content=" Info "></bootstrap-dropdown-label>
+                        <bootstrap-dropdown-menu labelledby="newDropDown">
+                            <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                            <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                        </bootstrap-dropdown-menu>
+                    </bootstrap-dropdown>
+
+                    <bootstrap-dropdown>
+                        <bootstrap-dropdown-label id="newDropDown" class="btn btn-warning dropdown-toggle" content=" Warning "></bootstrap-dropdown-label>
+                        <bootstrap-dropdown-menu labelledby="newDropDown">
+                            <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                            <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                        </bootstrap-dropdown-menu>
+                    </bootstrap-dropdown>
+
+                    <bootstrap-dropdown>
+                        <bootstrap-dropdown-label id="newDropDown" class="btn btn-danger dropdown-toggle" content=" Danger "></bootstrap-dropdown-label>
+                        <bootstrap-dropdown-menu labelledby="newDropDown">
+                            <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                            <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                            <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                        </bootstrap-dropdown-menu>
+                    </bootstrap-dropdown>
+                    </div>
+
+
+                    <h2>Split button dropdowns</h2>
+                    <p>Similarly, create split button dropdowns with the same markup changes, only with a separate button.</p>
+                    <div class="example">
+                        <bootstrap-dropdown>
+                            <bootstrap-button type="button" class="btn btn-default" autocomplete="off">Default</bootstrap-button>
+                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-default dropdown-toggle" content=""></bootstrap-dropdown-label>
+                            <bootstrap-dropdown-menu labelledby="newDropDown">
+                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                            </bootstrap-dropdown-menu>
+                        </bootstrap-dropdown>
+
+                        <bootstrap-dropdown>
+                            <bootstrap-button type="button" class="btn btn-primary" autocomplete="off">Primary</bootstrap-button>
+                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-primary dropdown-toggle" content=""></bootstrap-dropdown-label>
+                            <bootstrap-dropdown-menu labelledby="newDropDown">
+                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                            </bootstrap-dropdown-menu>
+                        </bootstrap-dropdown>
+
+                        <bootstrap-dropdown>
+                            <bootstrap-button type="button" class="btn btn-success" autocomplete="off">Success</bootstrap-button>
+                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-success dropdown-toggle" content=""></bootstrap-dropdown-label>
+                            <bootstrap-dropdown-menu labelledby="newDropDown">
+                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                            </bootstrap-dropdown-menu>
+                        </bootstrap-dropdown>
+
+                        <bootstrap-dropdown>
+                            <bootstrap-button type="button" class="btn btn-info" autocomplete="off">Info</bootstrap-button>
+                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-info dropdown-toggle" content=""></bootstrap-dropdown-label>
+                            <bootstrap-dropdown-menu labelledby="newDropDown">
+                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                            </bootstrap-dropdown-menu>
+                        </bootstrap-dropdown>
+
+                        <bootstrap-dropdown>
+                            <bootstrap-button type="button" class="btn btn-warning" autocomplete="off">Warning</bootstrap-button>
+                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-warning dropdown-toggle" content=""></bootstrap-dropdown-label>
+                            <bootstrap-dropdown-menu labelledby="newDropDown">
+                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                            </bootstrap-dropdown-menu>
+                        </bootstrap-dropdown>
+
+                        <bootstrap-dropdown>
+                            <bootstrap-button type="button" class="btn btn-danger" autocomplete="off">Danger</bootstrap-button>
+                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-danger dropdown-toggle" content=""></bootstrap-dropdown-label>
+                            <bootstrap-dropdown-menu labelledby="newDropDown">
+                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                            </bootstrap-dropdown-menu>
+                        </bootstrap-dropdown>
+                    </div>
+
+
+                    <h2>Sizing</h2>
+                    <p>Button dropdowns work with buttons of all sizes.</p>
+                    <div class="example">
+                        <bootstrap-dropdown>
+                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-default btn-lg dropdown-toggle" content=" Large button "></bootstrap-dropdown-label>
+                            <bootstrap-dropdown-menu labelledby="newDropDown">
+                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                            </bootstrap-dropdown-menu>
+                        </bootstrap-dropdown>
+                        <br /><br />
+                        <bootstrap-dropdown>
+                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-default btn-sm dropdown-toggle" content=" Small button "></bootstrap-dropdown-label>
+                            <bootstrap-dropdown-menu labelledby="newDropDown">
+                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                            </bootstrap-dropdown-menu>
+                        </bootstrap-dropdown>
+                        <br /><br />
+                        <bootstrap-dropdown>
+                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-default btn-xs dropdown-toggle" content=" Extra small button "></bootstrap-dropdown-label>
+                            <bootstrap-dropdown-menu labelledby="newDropDown">
+                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                            </bootstrap-dropdown-menu>
+                        </bootstrap-dropdown>
+                    </div>
+
+
+                    <h2>Dropup variation</h2>
+                    <p>Trigger dropdown menus above elements by adding <code>&lt;bootstrap-dropup&gt;</code> to the parent.</p>
+                    <div class="example">
+                        <bootstrap-dropup>
+                            <bootstrap-dropdown>
+                                <bootstrap-button type="button" class="btn btn-default" autocomplete="off">Dropup</bootstrap-button>
+                                <bootstrap-dropdown-label id="newDropDown" class="btn btn-default dropdown-toggle" content=""></bootstrap-dropdown-label>
+                                <bootstrap-dropdown-menu labelledby="newDropDown">
+                                    <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                    <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                </bootstrap-dropdown-menu>
+                            </bootstrap-dropdown>
+                        </bootstrap-dropup>
+
+                        <bootstrap-dropup>
+                            <bootstrap-dropdown>
+                                <bootstrap-button type="button" class="btn btn-primary" autocomplete="off">Right dropup</bootstrap-button>
+                                <bootstrap-dropdown-label id="newDropDown" class="btn btn-primary dropdown-toggle" content=""></bootstrap-dropdown-label>
+                                <bootstrap-dropdown-menu class="dropdown-menu-right" labelledby="newDropDown">
+                                    <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                    <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                </bootstrap-dropdown-menu>
+                            </bootstrap-dropdown>
+                        </bootstrap-dropup>
+                    </div>
+                </div>
+
+
+
+            <h1 id="input-groups" class="page-header">Input groups</h1>
+            <p>Extend form controls by adding text or buttons before, after, or on both sides of any text-based <code>&lt;input&gt;</code>. Use <code>&lt;bootstrap-input-group&gt;</code> with an <code>&lt;bootstrap-input-group-addon&gt;</code> to prepend or append elements to a single <code>.form-control</code>.</p>
+
+            <div class="component">
+                <h2>Basic example</h2>
+                <p>Place one add-on or button on either side of an input. You may also place one on both sides of an input.</p>
+                <div class="example">
+                    <bootstrap-input-group>
+                        <bootstrap-input-group-addon id="basic-addon1">@@</bootstrap-input-group-addon>
+                        <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                    </bootstrap-input-group>
+                    <br />
+                    <bootstrap-input-group>
+                        <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+                        <bootstrap-input-group-addon id="basic-addon2">@@example.com</bootstrap-input-group-addon>
+                    </bootstrap-input-group>
+                    <br />
+                    <bootstrap-input-group>
+                        <bootstrap-input-group-addon id="basic-addon">$</bootstrap-input-group-addon>
+                        <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon">
+                        <bootstrap-input-group-addon id="basic-addon">.00</bootstrap-input-group-addon>
+                    </bootstrap-input-group>
+                    <br />
+                    <label for="basic-url">Your vanity URL</label>
+                    <bootstrap-input-group>
+                        <bootstrap-input-group-addon id="basic-addon3">https://example.com/users/</bootstrap-input-group-addon>
+                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    </bootstrap-input-group>
+                    </div>
+
+
+                    <h2>Sizing</h2>
+                    <p>Add the relative form sizing classes to the <code>&lt;bootstrap-input-group&gt;</code> itself and contents within will automatically resize—no need for repeating the form control size classes on each element.</p>
+                    <div class="example">
+                        <bootstrap-input-group class="input-group-lg">
+                            <bootstrap-input-group-addon id="basic-addon1">@@</bootstrap-input-group-addon>
+                            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                        </bootstrap-input-group>
+                        <br />
+                        <bootstrap-input-group>
+                            <bootstrap-input-group-addon id="basic-addon1">@@</bootstrap-input-group-addon>
+                            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                        </bootstrap-input-group>
+                        <br />
+                        <bootstrap-input-group class="input-group-sm">
+                            <bootstrap-input-group-addon id="basic-addon1">@@</bootstrap-input-group-addon>
+                            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                        </bootstrap-input-group>
+                    </div>
+
+
+                    <h2>Checkboxes and radio addons</h2>
+                    <p>Place any checkbox or radio option within an input group's addon instead of text.</p>
+                    <div class="example">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <bootstrap-input-group>
+                                    <bootstrap-input-group-addon id="basic-addon1"><input type="checkbox" aria-label="Checkbox for following text input"></bootstrap-input-group-addon>
+                                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                                </bootstrap-input-group>
+                            </div>
+                            <div class="col-lg-6">
+                                <bootstrap-input-group>
+                                    <bootstrap-input-group-addon id="basic-addon1"><input type="radio" aria-label="Radio button for following text input"></bootstrap-input-group-addon>
+                                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                                </bootstrap-input-group>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <h2>Button addons</h2>
+                    <p>Buttons in input groups are a bit different and require one extra level of nesting. In <code>&lt;bootstrap-input-group-addon&gt;</code>, you'll need to add <code>type="button"</code> to wrap the buttons. This is required due to default browser styles that cannot be overridden.</p>
+                    <div class="example">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <bootstrap-input-group>
+                                    <bootstrap-input-group-addon type="button" id="basic-addon1a">
+                                        <bootstrap-button type="button" id="myButton" class="btn btn-default">Go!</bootstrap-button>
+                                    </bootstrap-input-group-addon>
+                                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1a">
+                                </bootstrap-input-group>
+                            </div>
+                            <div class="col-lg-6">
+                                <bootstrap-input-group>
+                                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1b">
+                                    <bootstrap-input-group-addon type="button" id="basic-addon1b">
+                                        <bootstrap-button type="button" id="myButton" class="btn btn-default">Go!</bootstrap-button>
+                                    </bootstrap-input-group-addon>
+                                </bootstrap-input-group>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <h2>Buttons with dropdowns</h2>
+                    <div class="example">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <bootstrap-input-group>
+                                    <bootstrap-input-group-addon type="button" id="basic-addon1a">
+                                        <bootstrap-dropdown class="dropdown">
+                                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-default" content=" Action "></bootstrap-dropdown-label>
+                                            <bootstrap-dropdown-menu labelledby="newDropDown">
+                                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                            </bootstrap-dropdown-menu>
+                                        </bootstrap-dropdown>
+                                    </bootstrap-input-group-addon>
+                                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1a">
+                                </bootstrap-input-group>
+                            </div>
+                            <div class="col-lg-6">
+                                <bootstrap-input-group>
+                                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1b">
+                                    <bootstrap-input-group-addon type="button" id="basic-addon1b">
+                                        <bootstrap-dropdown class="dropdown">
+                                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-default" content=" Action "></bootstrap-dropdown-label>
+                                            <bootstrap-dropdown-menu labelledby="newDropDown">
+                                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                            </bootstrap-dropdown-menu>
+                                        </bootstrap-dropdown>
+                                    </bootstrap-input-group-addon>
+                                </bootstrap-input-group>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <h2>Segmented buttons</h2>
+                    <div class="example">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <bootstrap-input-group>
+                                    <bootstrap-input-group-addon type="button" id="basic-addon1a">
+                                        <bootstrap-dropdown class="dropdown">
+                                            <bootstrap-button type="button" class="btn btn-default" autocomplete="off">Action</bootstrap-button>
+                                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-default" content=""></bootstrap-dropdown-label>
+                                            <bootstrap-dropdown-menu labelledby="newDropDown">
+                                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                            </bootstrap-dropdown-menu>
+                                        </bootstrap-dropdown>
+                                    </bootstrap-input-group-addon>
+                                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1a">
+                                </bootstrap-input-group>
+                            </div>
+                            <div class="col-lg-6">
+                                <bootstrap-input-group>
+                                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1b">
+                                    <bootstrap-input-group-addon type="button" id="basic-addon1b">
+                                        <bootstrap-dropdown class="dropdown">
+                                            <bootstrap-button type="button" class="btn btn-default" autocomplete="off">Action</bootstrap-button>
+                                            <bootstrap-dropdown-label id="newDropDown" class="btn btn-default" content=""></bootstrap-dropdown-label>
+                                            <bootstrap-dropdown-menu labelledby="newDropDown">
+                                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                            </bootstrap-dropdown-menu>
+                                        </bootstrap-dropdown>
+                                    </bootstrap-input-group-addon>
+                                </bootstrap-input-group>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <h2>Multiple buttons</h2>
+                    <p>While you can only have one add-on per side, you can have multiple buttons inside a single <code>&lt;bootstrap-input-group-addon&gt;</code>.</p>
+                    <div class="example">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <bootstrap-input-group>
+                                    <bootstrap-input-group-addon type="button" id="basic-addon1a">
+                                        <bootstrap-button type="button" id="myButton" class="btn btn-default"><span class="glyphicon glyphicon-bold"></span></bootstrap-button>
+                                        <bootstrap-button type="button" id="myButton" class="btn btn-default"><span class="glyphicon glyphicon-italic"></span></bootstrap-button>
+                                    </bootstrap-input-group-addon>
+                                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1a">
+                                </bootstrap-input-group>
+                            </div>
+                            <div class="col-lg-6">
+                                <bootstrap-input-group>
+                                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1b">
+                                    <bootstrap-input-group-addon type="button" id="basic-addon1b">
+                                        <bootstrap-button type="button" id="myButton" class="btn btn-default"><span class="glyphicon glyphicon-question-sign"></span></bootstrap-button>
+                                        <bootstrap-button type="button" id="myButton" class="btn btn-default">Action</bootstrap-button>
+                                    </bootstrap-input-group-addon>
+                                </bootstrap-input-group>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            <h1 id="nav" class="page-header">Navs</h1>
+            <p>Navs available in Bootstrap have shared markup, starting with the base <code>&lt;bootstrap-nav&gt;</code> tag helper, as well as shared states. Swap modifier classes to switch between each style.</p>
+            <div class="component">
+                <h2>Tabs</h2>
+                <p>Note the <code>.nav-tabs</code> class requires the <code>.nav</code> base class.</p>
+                <div class="example">
+                    <bootstrap-nav>
+                        <bootstrap-nav-item class="active"><a href="#">Home</a></bootstrap-nav-item>
+                        <bootstrap-nav-item><a href="#">Profile</a></bootstrap-nav-item>
+                        <bootstrap-nav-item><a href="#">Messages</a></bootstrap-nav-item>
+                    </bootstrap-nav>
+                    </div>
+
+
+                    <h2>Pills</h2>
+                    <p>Take that same HTML, but use <code>.nav-pills</code> instead:</p>
+                    <div class="example">
+                        <bootstrap-nav class="nav-pills">
+                            <bootstrap-nav-item class="active"><a href="#">Home</a></bootstrap-nav-item>
+                            <bootstrap-nav-item><a href="#">Profile</a></bootstrap-nav-item>
+                            <bootstrap-nav-item><a href="#">Messages</a></bootstrap-nav-item>
+                        </bootstrap-nav>
+                    </div>
+
+
+                    <h2>Stacked Pills</h2>
+                    <p>Pills are also vertically stackable. Just add <code>.nav-stacked</code>.</p>
+                    <div class="example">
+                        <bootstrap-nav class="nav-pills nav-stacked">
+                            <bootstrap-nav-item class="active"><a href="#">Home</a></bootstrap-nav-item>
+                            <bootstrap-nav-item><a href="#">Profile</a></bootstrap-nav-item>
+                            <bootstrap-nav-item><a href="#">Messages</a></bootstrap-nav-item>
+                        </bootstrap-nav>
+                    </div>
+
+
+                    <h2>Justified</h2>
+                    <p>Easily make tabs or pills equal widths of their parent at screens wider than 768px with <code>.nav-justified</code>. On smaller screens, the nav links are stacked.</p>
+                    <div class="example">
+                        <bootstrap-nav class="nav-tabs nav-justified">
+                            <bootstrap-nav-item class="active"><a href="#">Home</a></bootstrap-nav-item>
+                            <bootstrap-nav-item><a href="#">Profile</a></bootstrap-nav-item>
+                            <bootstrap-nav-item><a href="#">Messages</a></bootstrap-nav-item>
+                        </bootstrap-nav>
+                        <br /><br />
+                        <bootstrap-nav class="nav-pills nav-justified">
+                            <bootstrap-nav-item class="active"><a href="#">Home</a></bootstrap-nav-item>
+                            <bootstrap-nav-item><a href="#">Profile</a></bootstrap-nav-item>
+                            <bootstrap-nav-item><a href="#">Messages</a></bootstrap-nav-item>
+                        </bootstrap-nav>
+                    </div>
+
+
+                    <h2>Disabled links</h2>
+                    <p>For any nav component (tabs or pills), add <code>.disabled</code> for <strong>gray links and no hover effects</strong>.</p>
+                    <div class="example">
+                        <bootstrap-nav class="nav-pills nav-justified">
+                            <bootstrap-nav-item class="disabled"><a href="#">Home</a></bootstrap-nav-item>
+                            <bootstrap-nav-item><a href="#">Profile</a></bootstrap-nav-item>
+                            <bootstrap-nav-item><a href="#">Messages</a></bootstrap-nav-item>
+                        </bootstrap-nav>
+                    </div>
+
+
+                    <h2>Tabs with dropdowns</h2>
+                    <div class="example">
+                        <bootstrap-nav class="nav-tabs">
+                            <bootstrap-nav-item><a href="#">Home</a></bootstrap-nav-item>
+                            <bootstrap-nav-item><a href="#">Profile</a></bootstrap-nav-item>
+                            <bootstrap-nav-item>
+                                <bootstrap-dropdown class="dropdown">
+                                    <bootstrap-dropdown-label id="newDropDown1a" class="btn btn-default" content=" Dropdown "></bootstrap-dropdown-label>
+                                    <bootstrap-dropdown-menu labelledby="newDropDown1a">
+                                        <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                        <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                    </bootstrap-dropdown-menu>
+                                </bootstrap-dropdown>
+                            </bootstrap-nav-item>
+                        </bootstrap-nav>
+                    </div>
+
+
+                    <h2>Pills with dropdowns</h2>
+                    <div class="example">
+                        <bootstrap-nav class="nav-pills">
+                            <bootstrap-nav-item><a href="#">Home</a></bootstrap-nav-item>
+                            <bootstrap-nav-item><a href="#">Profile</a></bootstrap-nav-item>
+                            <bootstrap-nav-item class="dropdown">
+                                <bootstrap-dropdown class="dropdown">
+                                    <bootstrap-dropdown-label id="newDropDown1a" class="btn btn-default" content=" Dropdown "></bootstrap-dropdown-label>
+                                    <bootstrap-dropdown-menu labelledby="newDropDown1a">
+                                        <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                        <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                    </bootstrap-dropdown-menu>
+                                </bootstrap-dropdown>
+                            </bootstrap-nav-item>
+                        </bootstrap-nav>
+                    </div>
+
+                </div>
+
+
+
+            <h1 id="navbar" class="page-header">Navbar</h1>
+            <p>Navbars are responsive meta components that serve as navigation headers for your application or site. They begin collapsed (and are toggleable) in mobile views and become horizontal as the available viewport width increases.</p>
+            <div class="component">
+
+                <bootstrap-nav-bar>
+                    <bootstrap-nav-bar-header>
+                        <bootstrap-button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" autocomplete="off">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </bootstrap-button>
+                        <a class="navbar-brand" href="#">Brand</a>
+                    </bootstrap-nav-bar-header>
+                    <bootstrap-nav-bar-collapse>
+                        <bootstrap-nav class="navbar-nav">
+                            <bootstrap-nav-item class="active"><a href="#">Link</a></bootstrap-nav-item>
+                            <bootstrap-nav-item><a href="#">Link</a></bootstrap-nav-item>
+                            <bootstrap-nav-item class="dropdown">
+                                <bootstrap-dropdown class="dropdown">
+                                    <bootstrap-dropdown-label id="newDropDown1a" class="btn btn-default" content="Dropdown "></bootstrap-dropdown-label>
+                                    <bootstrap-dropdown-menu labelledby="newDropDown1a">
+                                        <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                        <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                        <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                    </bootstrap-dropdown-menu>
+                                </bootstrap-dropdown>
+                            </bootstrap-nav-item>
+                        </bootstrap-nav>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <bootstrap-button type="button" class="btn btn-default navbar-btn" autocomplete="off">Submit</bootstrap-button>
+                        </form>
+                        <bootstrap-nav class="navbar-nav navbar-right">
+                            <bootstrap-nav-item><a href="#">Link</a></bootstrap-nav-item>
+                            <bootstrap-nav-item class="dropdown">
+                                <bootstrap-dropdown class="dropdown">
+                                    <bootstrap-dropdown-label id="newDropDown1a" class="btn btn-default" content="Dropdown "></bootstrap-dropdown-label>
+                                    <bootstrap-dropdown-menu labelledby="newDropDown1a">
+                                        <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                        <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                    </bootstrap-dropdown-menu>
+                                </bootstrap-dropdown>
+                            </bootstrap-nav-item>
+                        </bootstrap-nav>
+                    </bootstrap-nav-bar-collapse>
+                </bootstrap-nav-bar>
+
+
+
+
+
+                <h2>Brand image</h2>
+                <p>Replace the navbar brand with your own image by swapping the text for an <code>&lt;img&gt;</code>. Since the <code>.navbar-brand</code> has its own padding and height, you may need to override some CSS depending on your image.</p>
+                <div class="example">
+                    <bootstrap-nav-bar>
+                        <bootstrap-nav-bar-header>
+                            <a class="navbar-brand" href="#">
+                                <img alt="Brand" width="20" height="20" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAA81BMVEX///9VPnxWPXxWPXxWPXxWPXxWPXxWPXz///9hSYT6+vuFc6BXPn37+vz8+/z9/f2LeqWMe6aOfqiTg6uXiK5bQ4BZQX9iS4VdRYFdRYJfSINuWI5vWY9xXJF0YJR3Y5Z4ZZd5ZZd6Z5h9apq0qcW1qsW1q8a6sMqpnLyrn76tocCvpMGwpMJoUoprVYxeRoJjS4abjLGilLemmbrDutDFvdLPx9nX0eDa1OLb1uPd1+Td2OXe2eXh3Ofj3+nk4Orl4evp5u7u7PLv7fPx7/T08vb08/f19Pf29Pj39vn6+fuEcZ9YP35aQn/8/P1ZQH5fR4PINAOdAAAAB3RSTlMAIWWOw/P002ipnAAAAPhJREFUeF6NldWOhEAUBRvtRsfdfd3d3e3/v2ZPmGSWZNPDqScqqaSBSy4CGJbtSi2ubRkiwXRkBo6ZdJIApeEwoWMIS1JYwuZCW7hc6ApJkgrr+T/eW1V9uKXS5I5GXAjW2VAV9KFfSfgJpk+w4yXhwoqwl5AIGwp4RPgdK3XNHD2ETYiwe6nUa18f5jYSxle4vulw7/EtoCdzvqkPv3bn7M0eYbc7xFPXzqCrRCgH0Hsm/IjgTSb04W0i7EGjz+xw+wR6oZ1MnJ9TWrtToEx+4QfcZJ5X6tnhw+nhvqebdVhZUJX/oFcKvaTotUcvUnY188ue/n38AunzPPE8yg7bAAAAAElFTkSuQmCC" />
+                            </a>
+                        </bootstrap-nav-bar-header>
+                    </bootstrap-nav-bar>
+                    </div>
+
+
+                    <h2>Forms</h2>
+                    <p>Place form content within <code>.navbar-form</code> for proper vertical alignment and collapsed behavior in narrow viewports. Use the alignment options to decide where it resides within the navbar content.</p>
+                    <p>As a heads up, <code>.navbar-form</code> shares much of its code with <code>.form-inline</code> via mixin. <strong class="text-danger">Some form controls, like input groups, may require fixed widths to be show up properly within a navbar.</strong></p>
+                    <div class="example">
+                        <bootstrap-nav-bar>
+                            <bootstrap-nav-bar-header>
+                                <bootstrap-button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" autocomplete="off">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </bootstrap-button>
+                                <a class="navbar-brand" href="#">Brand</a>
+                            </bootstrap-nav-bar-header>
+                            <bootstrap-nav-bar-collapse>
+                                <form class="navbar-form navbar-left" role="search">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Search">
+                                    </div>
+                                    <bootstrap-button type="button" class="btn btn-default navbar-btn" autocomplete="off">Submit</bootstrap-button>
+                                </form>
+                            </bootstrap-nav-bar-collapse>
+                        </bootstrap-nav-bar>
+                    </div>
+
+
+                    <h2>Buttons</h2>
+                    <p>Add the <code>.navbar-btn</code> class to <code>&lt;bootstrap-button&gt;</code> elements not residing in a <code>&lt;form&gt;</code> to vertically center them in the navbar.</p>
+                    <div class="example">
+                        <bootstrap-nav-bar>
+                            <bootstrap-nav-bar-header>
+                                <bootstrap-button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" autocomplete="off">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </bootstrap-button>
+                                <a class="navbar-brand" href="#">Brand</a>
+                            </bootstrap-nav-bar-header>
+                            <bootstrap-nav-bar-collapse>
+                                <bootstrap-button type="button" class="btn btn-default navbar-btn" autocomplete="off">Sign in</bootstrap-button>
+                            </bootstrap-nav-bar-collapse>
+                        </bootstrap-nav-bar>
+                    </div>
+
+
+                    <h2>Text</h2>
+                    <p>Wrap strings of text in an element with <code>.navbar-text</code>, usually on a <code>&lt;p&gt;</code> tag for proper leading and color.</p>
+                    <div class="example">
+                        <bootstrap-nav-bar>
+                            <bootstrap-nav-bar-header>
+                                <bootstrap-button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" autocomplete="off">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </bootstrap-button>
+                                <a class="navbar-brand" href="#">Brand</a>
+                            </bootstrap-nav-bar-header>
+                            <bootstrap-nav-bar-collapse>
+                                <p class="navbar-text">Signed in as Mark Otto</p>
+                            </bootstrap-nav-bar-collapse>
+                        </bootstrap-nav-bar>
+                    </div>
+
+
+                    <h2>Non-nav links</h2>
+                    <p>For folks using standard links that are not within the regular navbar navigation component, use the <code>.navbar-link</code> class to add the proper colors for the default and inverse navbar options.</p>
+                    <div class="example">
+                        <bootstrap-nav-bar>
+                            <bootstrap-nav-bar-header>
+                                <bootstrap-button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" autocomplete="off">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </bootstrap-button>
+                                <a class="navbar-brand" href="#">Brand</a>
+                            </bootstrap-nav-bar-header>
+                            <bootstrap-nav-bar-collapse>
+                                <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
+                            </bootstrap-nav-bar-collapse>
+                        </bootstrap-nav-bar>
+                    </div>
+
+
+                    <!--  Goes fixed on top
+        <h2>Fixed top</h2>
+        <p>Add <code>.navbar-fixed-top</code> and include a <code>.container</code> or <code>.container-fluid</code> to center and pad navbar content.</p>
+            <div class="example">
+        <bootstrap-nav-bar class="navbar-default navbar-fixed-top">
+            <bootstrap-nav-bar-header>
+                <bootstrap-button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" autocomplete="off">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </bootstrap-button>
+                <a class="navbar-brand" href="#">Brand</a>
+            </bootstrap-nav-bar-header>
+            <bootstrap-nav-bar-collapse>
+                <ul class="nav navbar-nav"> <li class="active"><a href="#">Home</a></li> <li><a href="#">Link</a></li> <li><a href="#">Link</a></li> </ul>
+            </bootstrap-nav-bar-collapse>
+        </bootstrap-nav-bar>
+            </div>
+                    -->
+                    <!-- Goes fixed on bottom
+        <h2>Fixed bottom</h2>
+        <p>Add <code>.navbar-fixed-bottom</code> and include a <code>.container</code> or <code>.container-fluid</code> to center and pad navbar content.</p>
+            <div class="example">
+        <bootstrap-nav-bar class="navbar-default navbar-fixed-bottom">
+            <bootstrap-nav-bar-header>
+                <bootstrap-button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" autocomplete="off">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </bootstrap-button>
+                <a class="navbar-brand" href="#">Brand</a>
+            </bootstrap-nav-bar-header>
+            <bootstrap-nav-bar-collapse>
+                <ul class="nav navbar-nav"> <li class="active"><a href="#">Home</a></li> <li><a href="#">Link</a></li> <li><a href="#">Link</a></li> </ul>
+            </bootstrap-nav-bar-collapse>
+        </bootstrap-nav-bar>
+            </div>
+                -->
+
+
+                    <h2>Static top</h2>
+                    <p>Create a full-width navbar that scrolls away with the page by adding <code>.navbar-static-top</code> and include a <code>.container</code> or <code>.container-fluid</code> to center and pad navbar content.</p>
+                    <div class="example">
+                        <bootstrap-nav-bar class="navbar-default navbar-static-top">
+                            <bootstrap-nav-bar-header>
+                                <bootstrap-button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" autocomplete="off">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </bootstrap-button>
+                                <a class="navbar-brand" href="#">Brand</a>
+                            </bootstrap-nav-bar-header>
+                            <bootstrap-nav-bar-collapse>
+                                <ul class="nav navbar-nav"> <li class="active"><a href="#">Home</a></li> <li><a href="#">Link</a></li> <li><a href="#">Link</a></li> </ul>
+                            </bootstrap-nav-bar-collapse>
+                        </bootstrap-nav-bar>
+                    </div>
+
+
+                    <h2>Inverted navbar</h2>
+                    <p>Modify the look of the navbar by adding <code>.navbar-inverse</code>.</p>
+                    <div class="example">
+                        <bootstrap-nav-bar class="navbar-inverse">
+                            <bootstrap-nav-bar-header>
+                                <bootstrap-button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" autocomplete="off">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </bootstrap-button>
+                                <a class="navbar-brand" href="#">Brand</a>
+                            </bootstrap-nav-bar-header>
+                            <bootstrap-nav-bar-collapse>
+                                <ul class="nav navbar-nav"> <li class="active"><a href="#">Home</a></li> <li><a href="#">Link</a></li> <li><a href="#">Link</a></li> </ul>
+                            </bootstrap-nav-bar-collapse>
+                        </bootstrap-nav-bar>
+                    </div>
+                </div>
+
+
+
+            <h1 id="breadcrumbs" class="page-header">Breadcrumbs</h1>
+            <p>Indicate the current page's location within a navigational hierarchy.</p>
+            <p>Separators are automatically added in CSS through <code>:before</code> and <code>content</code>.</p>
+            <div class="component">
+                <div class="example">
+                    <bootstrap-breadcrumb>
+                        <bootstrap-breadcrumb-item class="active">Home</bootstrap-breadcrumb-item>
+                    </bootstrap-breadcrumb>
+                    <bootstrap-breadcrumb>
+                        <bootstrap-breadcrumb-item><a href="#">Home</a></bootstrap-breadcrumb-item>
+                        <bootstrap-breadcrumb-item class="active">Library</bootstrap-breadcrumb-item>
+                    </bootstrap-breadcrumb>
+                    <bootstrap-breadcrumb>
+                        <bootstrap-breadcrumb-item><a href="#">Home</a></bootstrap-breadcrumb-item>
+                        <bootstrap-breadcrumb-item><a href="#">Library</a></bootstrap-breadcrumb-item>
+                        <bootstrap-breadcrumb-item class="active">Data</bootstrap-breadcrumb-item>
+                    </bootstrap-breadcrumb>
+                    </div>
+                </div>
+
+
+
+            <h1 id="pagination" class="page-header">Pagination</h1>
+            <p>Provide pagination links for your site or app with the multi-page pagination component.</p>
+            <div class="component">
+                <h2>Default pagination</h2>
+                <p>Simple pagination inspired by Rdio, great for apps and search results. The large block is hard to miss, easily scalable, and provides large click areas.</p>
+                <div class="example">
+                    <bootstrap-pagination>
+                        <bootstrap-pagination-item><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></bootstrap-pagination-item>
+                        <bootstrap-pagination-item><a href="#">1</a></bootstrap-pagination-item>
+                        <bootstrap-pagination-item><a href="#">2</a></bootstrap-pagination-item>
+                        <bootstrap-pagination-item><a href="#">3</a></bootstrap-pagination-item>
+                        <bootstrap-pagination-item><a href="#">4</a></bootstrap-pagination-item>
+                        <bootstrap-pagination-item><a href="#">5</a></bootstrap-pagination-item>
+                        <bootstrap-pagination-item><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></bootstrap-pagination-item>
+                    </bootstrap-pagination>
+                    </div>
+
+
+                    <h2>Disabled and active states</h2>
+                    <p>Links are customizable for different circumstances. Use <code>.disabled</code> for unclickable links and <code>.active</code> to indicate the current page.</p>
+                    <div class="example">
+                        <bootstrap-pagination>
+                            <bootstrap-pagination-item class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item class="active"><a href="#">1</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">2</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">3</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">4</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">5</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></bootstrap-pagination-item>
+                        </bootstrap-pagination>
+                    </div>
+
+
+                    <h2>Sizing</h2>
+                    <p>Fancy larger or smaller pagination? Add <code>.pagination-lg</code> or <code>.pagination-sm</code> for additional sizes.</p>
+                    <div class="example">
+                        <bootstrap-pagination class="pagination-lg">
+                            <bootstrap-pagination-item><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">1</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">2</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">3</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">4</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">5</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></bootstrap-pagination-item>
+                        </bootstrap-pagination>
+                        <bootstrap-pagination>
+                            <bootstrap-pagination-item><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">1</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">2</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">3</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">4</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">5</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></bootstrap-pagination-item>
+                        </bootstrap-pagination>
+                        <bootstrap-pagination class="pagination-sm">
+                            <bootstrap-pagination-item><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">1</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">2</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">3</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">4</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">5</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></bootstrap-pagination-item>
+                        </bootstrap-pagination>
+                    </div>
+
+
+                    <h2>Pager</h2>
+                    <p>Quick previous and next links for simple pagination implementations with light markup and styles. It's great for simple sites like blogs or magazines.</p>
+                    <p>By default, the pager centers links.</p>
+                    <div class="example">
+                        <bootstrap-pagination type="pager">
+                            <bootstrap-pagination-item><a href="#"><span aria-hidden="true">&larr;</span> Older</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></bootstrap-pagination-item>
+                        </bootstrap-pagination>
+                    </div>
+
+
+                    <h2>Pager aligned links</h2>
+                    <p>Alternatively, you can align each link to the sides:</p>
+                    <div class="example">
+                        <bootstrap-pagination type="pager">
+                            <bootstrap-pagination-item class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></bootstrap-pagination-item>
+                        </bootstrap-pagination>
+                    </div>
+
+
+                    <h2>Optional disabled state</h2>
+                    <p>Pager links also use the general <code>.disabled</code> utility class from the pagination.</p>
+                    <div class="example">
+                        <bootstrap-pagination type="pager">
+                            <bootstrap-pagination-item class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></bootstrap-pagination-item>
+                            <bootstrap-pagination-item class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></bootstrap-pagination-item>
+                        </bootstrap-pagination>
+                    </div>
+                </div>
+
+
+
+            <h1 id="labels" class="page-header">Labels</h1>
+
+            <div class="component">
+                <h2>Example</h2>
+                <div class="example">
+                    <h1>Example heading <bootstrap-label class="label-default">New</bootstrap-label></h1>
+                    <h2>Example heading <bootstrap-label class="label-default">New</bootstrap-label></h2>
+                    <h3>Example heading <bootstrap-label class="label-default">New</bootstrap-label></h3>
+                    <h4>Example heading <bootstrap-label class="label-default">New</bootstrap-label></h4>
+                    <h5>Example heading <bootstrap-label class="label-default">New</bootstrap-label></h5>
+                    <h6>Example heading <bootstrap-label class="label-default">New</bootstrap-label></h6>
+                  </div>
+
+
+                    <h2>Available variations</h2>
+                    <p>Add any of the below mentioned modifier classes to change the appearance of a label.</p>
+                    <div class="example">
+                        <bootstrap-label class="label-default">Default</bootstrap-label>
+                        <bootstrap-label class="label-primary">Primary</bootstrap-label>
+                        <bootstrap-label class="label-success">Success</bootstrap-label>
+                        <bootstrap-label class="label-info">Info</bootstrap-label>
+                        <bootstrap-label class="label-warning">Warning</bootstrap-label>
+                        <bootstrap-label class="label-danger">Danger</bootstrap-label>
+                    </div>
+                </div>
+
+
+
+            <h1 id="badges" class="page-header">Badges</h1>
+            <p>Easily highlight new or unread items by adding a <code>&lt;bootstrap-badge&gt;</code>.</p>
+            <div class="component">
+                <div class="example">
+                    <bootstrap-button element="a" type="button" class="btn btn-link">Inbox <bootstrap-badge>42</bootstrap-badge></bootstrap-button>
+                    <br /><br />
+                    <bootstrap-button type="button" class="btn btn-primary">Messages <bootstrap-badge>4</bootstrap-badge></bootstrap-button>
+                  </div>
+
+                    <h2>Adapts to active nav states</h2>
+                    <p>Built-in styles are included for placing badges in active states in pill navigations.</p>
+                 <div class="example">
+                    <bootstrap-nav class="nav-pills">
+                        <bootstrap-nav-item class="active"><a href="#">Home <bootstrap-badge> 42</bootstrap-badge></a></bootstrap-nav-item>
+                        <bootstrap-nav-item><a href="#">Profile</a></bootstrap-nav-item>
+                        <bootstrap-nav-item><a href="#">Messages <bootstrap-badge> 3</bootstrap-badge></a></bootstrap-nav-item>
+                    </bootstrap-nav>
+                 </div>
+            </div>
+
+
+
+            <h1 id="jumbotron" class="page-header">Jumbotron</h1>
+            <p>A lightweight, flexible component that can optionally extend the entire viewport to showcase key content on your site.</p>
+            <div class="component">
+                <div class="example">
+                    <bootstrap-jumbotron>
+                        <h1>Hello, world!</h1>
+                        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                        <p>
+                            <bootstrap-button element="a" type="button" href="#" class="btn btn-primary btn-lg">Learn more</bootstrap-button>
+                        </p>
+                    </bootstrap-jumbotron>
+                  </div>
+              </div>
+
+
+
+            <h1 id="page-header" class="page-header">Page header</h1>
+            <p>A simple shell for an <code>h1</code> to appropriately space out and segment sections of content on a page. It can utilize the <code>h1</code>'s default <code>small</code> element, as well as most other components (with additional styles).</p>
+            <div class="component">
+                <div class="example">
+                    <bootstrap-page-header>
+                        <h1>Example page header <small>Subtext for header</small></h1>
+                    </bootstrap-page-header>
+                </div>
+            </div>
+
+
+
+            <h1 id="thumbnails" class="page-header">Thumbnails</h1>
+            <p>Extend Bootstrap's grid system with the thumbnail component to easily display grids of images, videos, text, and more.</p>
+            <div class="component">
+
+                <h2>Default example</h2>
+                <p>By default, Bootstrap's thumbnails are designed to showcase linked images with minimal required markup.</p>
+                <div class="example">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <bootstrap-thumbnail href="#">
+                                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE3MSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU1NmQ1NDFjZGIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTU2ZDU0MWNkYiI+PHJlY3Qgd2lkdGg9IjE3MSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI2MSIgeT0iOTQuNSI+MTcxeDE4MDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" width="100%" alt="asd" />
+                            </bootstrap-thumbnail>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <bootstrap-thumbnail href="#">
+                                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE3MSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU1NmQ1NDFjZGIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTU2ZDU0MWNkYiI+PHJlY3Qgd2lkdGg9IjE3MSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI2MSIgeT0iOTQuNSI+MTcxeDE4MDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" width="100%" alt="asd" />
+                            </bootstrap-thumbnail>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <bootstrap-thumbnail href="#">
+                                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE3MSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU1NmQ1NDFjZGIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTU2ZDU0MWNkYiI+PHJlY3Qgd2lkdGg9IjE3MSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI2MSIgeT0iOTQuNSI+MTcxeDE4MDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" width="100%" alt="asd" />
+                            </bootstrap-thumbnail>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <bootstrap-thumbnail href="#" target="_blank">
+                                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE3MSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU1NmQ1NDFjZGIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTU2ZDU0MWNkYiI+PHJlY3Qgd2lkdGg9IjE3MSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI2MSIgeT0iOTQuNSI+MTcxeDE4MDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" width="100%" alt="asd" />
+                            </bootstrap-thumbnail>
+                        </div>
+                    </div>
+                 </div>
+
+                    <h2>Custom content</h2>
+                    <p>With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs, or buttons into thumbnails.</p>
+                <div class="example">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <bootstrap-thumbnail>
+                                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU1NmQ1NDQzNzMgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTU2ZDU0NDM3MyI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTkzNzUiIHk9IjEwNS4xIj4yNDJ4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+" width="100%" alt="asd" />
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                    <p>
+                                        <bootstrap-button element="a" href="#" type="button" class="btn btn-primary" autocomplete="off">Button</bootstrap-button>
+                                        <bootstrap-button element="a" href="#" type="button" class="btn btn-default" autocomplete="off">Button</bootstrap-button>
+                                    </p>
+                                </div>
+                            </bootstrap-thumbnail>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <bootstrap-thumbnail>
+                                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU1NmQ1NDQzNzMgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTU2ZDU0NDM3MyI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTkzNzUiIHk9IjEwNS4xIj4yNDJ4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+" width="100%" alt="asd" />
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                    <p>
+                                        <bootstrap-button element="a" href="#" type="button" class="btn btn-primary" autocomplete="off">Button</bootstrap-button>
+                                        <bootstrap-button element="a" href="#" type="button" class="btn btn-default" autocomplete="off">Button</bootstrap-button>
+                                    </p>
+                                </div>
+                            </bootstrap-thumbnail>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <bootstrap-thumbnail>
+                                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU1NmQ1NDQzNzMgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTU2ZDU0NDM3MyI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTkzNzUiIHk9IjEwNS4xIj4yNDJ4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+" width="100%" alt="asd" />
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                    <p>
+                                        <bootstrap-button element="a" href="#" type="button" class="btn btn-primary" autocomplete="off">Button</bootstrap-button>
+                                        <bootstrap-button element="a" href="#" type="button" class="btn btn-default" autocomplete="off">Button</bootstrap-button>
+                                    </p>
+                                </div>
+                            </bootstrap-thumbnail>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+
+
+            <h1 id="alerts" class="page-header">Alerts</h1>
+            <p>Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</p>
+            <div class="component">
+                <h2>Examples</h2>
+                <p>Wrap any text and an optional dismiss button in <code>&lt;bootstrap-alert&gt;</code> and one of the four contextual classes (e.g., <code>.alert-success</code>) for basic alert messages.</p>
+                <div class="example">
+                    <bootstrap-alert class="alert-success" role="alert"><strong>Well done!</strong> You successfully read this important alert message. </bootstrap-alert>
+                    <bootstrap-alert class="alert-info" role="alert"><strong>Heads up!</strong> This alert needs your attention, but it's not super important. </bootstrap-alert>
+                    <bootstrap-alert class="alert-warning" role="alert"><strong>Warning!</strong> Better check yourself, you're not looking too good. </bootstrap-alert>
+                    <bootstrap-alert class="alert-danger" role="alert"><strong>Oh snap!</strong> Change a few things up and try submitting again. </bootstrap-alert>
+                    </div>
+
+
+                    <h2>Dismissible alerts</h2>
+                    <p>Build on any alert by adding an optional <code>.alert-dismissible</code> and close button.</p>
+                    <div class="example">
+                        <bootstrap-alert class="alert-warning alert-dismissible fade in">
+                            <bootstrap-alert-close><span aria-hidden="true">×</span></bootstrap-alert-close>
+                            <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                        </bootstrap-alert>
+                    </div>
+
+
+                    <h2>Links in alerts</h2>
+                    <p>Use the <code>.alert-link</code> utility class to quickly provide matching colored links within any alert.</p>
+                    <div class="example">
+                        <bootstrap-alert class="alert-success" role="alert"><strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.</bootstrap-alert>
+                        <bootstrap-alert class="alert-info" role="alert"><strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a> , but it's not super important.</bootstrap-alert>
+                        <bootstrap-alert class="alert-warning" role="alert"><strong>Warning!</strong> Better check yourself, you're <a href="#" class="alert-link">not looking too good</a>.</bootstrap-alert>
+                        <bootstrap-alert class="alert-danger" role="alert"><strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.</bootstrap-alert>
+                    </div>
+                </div>
+
+
+
+            <h1 id="progress" class="page-header">Progress bars</h1>
+            <p>Provide up-to-date feedback on the progress of a workflow or action with simple yet flexible progress bars.</p>
+
+            <div class="component">
+                <h2>Basic example</h2>
+                <p>Default progress bar.</p>
+                <div class="example">
+                    <bootstrap-progress>
+                        <bootstrap-progress-bar value="60">
+                            <span class="sr-only">60% Complete</span>
+                        </bootstrap-progress-bar>
+                    </bootstrap-progress>
+                    </div>
+
+
+                    <h2>With label</h2>
+                    <p>Remove the <code>&lt;span&gt;</code> with <code>.sr-only</code> class from within the progress bar to show a visible percentage.</p>
+                    <div class="example">
+                        <bootstrap-progress>
+                            <bootstrap-progress-bar value="60">
+                                60%
+                            </bootstrap-progress-bar>
+                        </bootstrap-progress>
+
+                        <bootstrap-progress>
+                            <bootstrap-progress-bar value="0" minwidth="2em">
+                                0%
+                            </bootstrap-progress-bar>
+                        </bootstrap-progress>
+
+                        <bootstrap-progress>
+                            <bootstrap-progress-bar value="2" minwidth="2em">
+                                2%
+                            </bootstrap-progress-bar>
+                        </bootstrap-progress>
+                    </div>
+
+
+                    <h2>Contextual alternatives</h2>
+                    <p>Progress bars use some of the same button and alert classes for consistent styles.</p>
+                    <div class="example">
+                        <bootstrap-progress>
+                            <bootstrap-progress-bar value="40" class="progress-bar-success">
+                                <span class="sr-only">40% Complete (success)</span>
+                            </bootstrap-progress-bar>
+                        </bootstrap-progress>
+                        <bootstrap-progress>
+                            <bootstrap-progress-bar value="20" minwidth="2em" class="progress-bar-info">
+                                <span class="sr-only">20% Complete</span>
+                            </bootstrap-progress-bar>
+                        </bootstrap-progress>
+                        <bootstrap-progress>
+                            <bootstrap-progress-bar value="60" class="progress-bar-warning">
+                                <span class="sr-only">60% Complete (warning)</span>
+                            </bootstrap-progress-bar>
+                        </bootstrap-progress>
+                        <bootstrap-progress>
+                            <bootstrap-progress-bar value="80" minwidth="2em" class="progress-bar-danger">
+                                <span class="sr-only">80% Complete (danger)</span>
+                            </bootstrap-progress-bar>
+                        </bootstrap-progress>
+                    </div>
+
+
+                    <h2>Striped</h2>
+                    <p>Uses a gradient to create a striped effect. Not available in IE9 and below.</p>
+                    <div class="example">
+                        <bootstrap-progress>
+                            <bootstrap-progress-bar value="40" class="progress-bar-success progress-bar-striped">
+                                <span class="sr-only">40% Complete (success)</span>
+                            </bootstrap-progress-bar>
+                        </bootstrap-progress>
+                        <bootstrap-progress>
+                            <bootstrap-progress-bar value="20" minwidth="2em" class="progress-bar-info progress-bar-striped">
+                                <span class="sr-only">20% Complete</span>
+                            </bootstrap-progress-bar>
+                        </bootstrap-progress>
+                        <bootstrap-progress>
+                            <bootstrap-progress-bar value="60" class="progress-bar-warning progress-bar-striped">
+                                <span class="sr-only">60% Complete (warning)</span>
+                            </bootstrap-progress-bar>
+                        </bootstrap-progress>
+                        <bootstrap-progress>
+                            <bootstrap-progress-bar value="80" minwidth="2em" class="progress-bar-danger progress-bar-striped">
+                                <span class="sr-only">80% Complete (danger)</span>
+                            </bootstrap-progress-bar>
+                        </bootstrap-progress>
+                    </div>
+
+
+                    <h2>Animated</h2>
+                    <p>Add <code>.active</code> to <code>.progress-bar-striped</code> to animate the stripes right to left. Not available in IE9 and below.</p>
+                    <div class="example">
+                        <bootstrap-progress>
+                            <bootstrap-progress-bar value="45" class="progress-bar-striped active">
+                                <span class="sr-only">45% Complete</span>
+                            </bootstrap-progress-bar>
+                        </bootstrap-progress>
+                    </div>
+
+
+                    <h2>Stacked</h2>
+                    <p>Place multiple bars into <code>&lt;bootstrap-progress&gt;</code> to stack them.</p>
+                    <div class="example">
+                        <bootstrap-progress>
+                            <bootstrap-progress-bar value="35" class="progress-bar-success">
+                                <span class="sr-only">35% Complete (success)</span>
+                            </bootstrap-progress-bar>
+                            <bootstrap-progress-bar value="20" class="progress-bar-warning progress-bar-striped">
+                                <span class="sr-only">20% Complete (warning)</span>
+                            </bootstrap-progress-bar>
+                            <bootstrap-progress-bar value="10" class="progress-bar-danger">
+                                <span class="sr-only">10% Complete (danger)</span>
+                            </bootstrap-progress-bar>
+                        </bootstrap-progress>
+                    </div>
+                </div>
+
+
+
+            <h1 id="media" class="page-header">Media object</h1>
+            <p>Abstract object styles for building various types of components (like blog comments, Tweets, etc) that feature a left- or right-aligned image alongside textual content.</p>
+            <div class="component">
+                <h2>Default media</h2>
+                <p>The default media displays a media object (images, video, audio) to the left or right of a content block.</p>
+                <div class="example">
+                    <bootstrap-media>
+                        <bootstrap-media-left>
+                            <a href="#"> <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTU2ZDRiNTlmYSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTZkNGI1OWZhIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" /> </a>
+                        </bootstrap-media-left>
+                        <bootstrap-media-body>
+                            <h4 class="media-heading">Media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                        </bootstrap-media-body>
+                    </bootstrap-media>
+
+                    <bootstrap-media>
+                        <bootstrap-media-left>
+                            <a href="#"> <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTU2ZDRiNTlmYSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTZkNGI1OWZhIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" /> </a>
+                        </bootstrap-media-left>
+                        <bootstrap-media-body>
+                            <h4 class="media-heading">Media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                            <bootstrap-media>
+                                <bootstrap-media-left>
+                                    <a href="#"> <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTU2ZDRiNTlmYSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTZkNGI1OWZhIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" /> </a>
+                                </bootstrap-media-left>
+                                <bootstrap-media-body>
+                                    <h4 class="media-heading">Nested media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                </bootstrap-media-body>
+                            </bootstrap-media>
+                        </bootstrap-media-body>
+                    </bootstrap-media>
+
+                    <bootstrap-media>
+                        <bootstrap-media-body>
+                            <h4 class="media-heading">Media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                        </bootstrap-media-body>
+                        <bootstrap-media-right>
+                            <a href="#"> <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTU2ZDRiNTlmYSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTZkNGI1OWZhIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" /> </a>
+                        </bootstrap-media-right>
+                    </bootstrap-media>
+
+                    <bootstrap-media>
+                        <bootstrap-media-left>
+                            <a href="#"> <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTU2ZDRiNTlmYSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTZkNGI1OWZhIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" /> </a>
+                        </bootstrap-media-left>
+                        <bootstrap-media-body>
+                            <h4 class="media-heading">Media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                        </bootstrap-media-body>
+                        <bootstrap-media-right>
+                            <a href="#"> <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTU2ZDRiNTlmYSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTZkNGI1OWZhIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" /> </a>
+                        </bootstrap-media-right>
+                    </bootstrap-media>
+                    </div>
+
+
+                    <h4>Media alignment</h4>
+                    <p>The images or other media can be aligned top, middle, or bottom. The default is top aligned.</p>
+                    <div class="example">
+                        <bootstrap-media>
+                            <bootstrap-media-left class="media-top">
+                                <a href="#"> <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTU2ZDRiNTlmYSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTZkNGI1OWZhIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" /> </a>
+                            </bootstrap-media-left>
+                            <bootstrap-media-body>
+                                <h4 class="media-heading">Top aligned media</h4>
+                                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                            </bootstrap-media-body>
+                        </bootstrap-media>
+                        <bootstrap-media>
+                            <bootstrap-media-left class="media-middle">
+                                <a href="#"> <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTU2ZDRiNTlmYSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTZkNGI1OWZhIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" /> </a>
+                            </bootstrap-media-left>
+                            <bootstrap-media-body>
+                                <h4 class="media-heading">Middle aligned media</h4>
+                                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                            </bootstrap-media-body>
+                        </bootstrap-media>
+                        <bootstrap-media>
+                            <bootstrap-media-left class="media-bottom">
+                                <a href="#"> <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTU2ZDRiNTlmYSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTZkNGI1OWZhIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" /> </a>
+                            </bootstrap-media-left>
+                            <bootstrap-media-body>
+                                <h4 class="media-heading">Bottom aligned media</h4>
+                                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                            </bootstrap-media-body>
+                        </bootstrap-media>
+                    </div>
+
+
+                    <h4>Media list</h4>
+                    <p>With a bit of extra markup, you can use media inside list (useful for comment threads or articles lists).</p>
+                    <div class="example">
+                        <bootstrap-media-list>
+                            <bootstrap-media>
+                                <bootstrap-media-left>
+                                    <a href="#"> <img class="media-object" style="width: 64px; height: 64px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTU2ZDRiNTlmYSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTZkNGI1OWZhIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" /> </a>
+                                </bootstrap-media-left>
+                                <bootstrap-media-body>
+                                    <h4 class="media-heading">Media heading</h4>
+                                    <p>Cras1 sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                    <bootstrap-media>
+                                        <bootstrap-media-left>
+                                            <a href="#"> <img class="media-object" style="width: 64px; height: 64px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTU2ZDRiNTlmYSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTZkNGI1OWZhIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" /> </a>
+                                        </bootstrap-media-left>
+                                        <bootstrap-media-body>
+                                            <h4 class="media-heading">Media heading</h4>
+                                            <p>Cras1 sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                            <bootstrap-media>
+                                                <bootstrap-media-left>
+                                                    <a href="#"> <img class="media-object" style="width: 64px; height: 64px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTU2ZDRiNTlmYSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTZkNGI1OWZhIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" /> </a>
+                                                </bootstrap-media-left>
+                                                <bootstrap-media-body>
+                                                    <h4 class="media-heading">Media heading</h4> Cras sit amet nibh libero, in gravida nulla.
+                                                </bootstrap-media-body>
+                                            </bootstrap-media>
+                                        </bootstrap-media-body>
+                                    </bootstrap-media>
+                                    <bootstrap-media>
+                                        <bootstrap-media-left>
+                                            <a href="#"> <img class="media-object" style="width: 64px; height: 64px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTU2ZDRiNTlmYSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTZkNGI1OWZhIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" /> </a>
+                                        </bootstrap-media-left>
+                                        <bootstrap-media-body>
+                                            <h4 class="media-heading">Media heading</h4> Cras sit amet nibh libero, in gravida nulla.
+                                        </bootstrap-media-body>
+                                    </bootstrap-media>
+                                </bootstrap-media-body>
+                            </bootstrap-media>
+                        </bootstrap-media-list>
+                    </div>
+                </div>
+
+
+
+            <h1 id="list-group" class="page-header">List Group</h1>
+            <p>List groups are a flexible and powerful component for displaying not only simple lists of elements, but complex ones with custom content.</p>
+            <div class="component">
+                <h2>Basic example</h2>
+                <p>The most basic list group is simply an unordered list with list items, and the proper classes. Build upon it with the options that follow, or your own CSS as needed.</p>
+                <div class="example">
+                    <bootstrap-listgroup>
+                        <bootstrap-listgroup-item>Cras justo odio</bootstrap-listgroup-item>
+                        <bootstrap-listgroup-item>Dapibus ac facilisis in</bootstrap-listgroup-item>
+                        <bootstrap-listgroup-item>Morbi leo risus</bootstrap-listgroup-item>
+                        <bootstrap-listgroup-item>Porta ac consectetur ac</bootstrap-listgroup-item>
+                        <bootstrap-listgroup-item>Vestibulum at eros</bootstrap-listgroup-item>
+                    </bootstrap-listgroup>
+                    </div>
+
+
+                    <h2>Badges</h2>
+                    <p>Add the badges component to any list group item and it will automatically be positioned on the right.</p>
+                    <div class="example">
+                        <bootstrap-listgroup>
+                            <bootstrap-listgroup-item>Cras justo odio <bootstrap-badge>14</bootstrap-badge></bootstrap-listgroup-item>
+                            <bootstrap-listgroup-item>Dapibus ac facilisis in <bootstrap-badge>2</bootstrap-badge></bootstrap-listgroup-item>
+                            <bootstrap-listgroup-item>Morbi leo risus <bootstrap-badge>1</bootstrap-badge></bootstrap-listgroup-item>
+                        </bootstrap-listgroup>
+                    </div>
+
+
+                    <h2>Linked items</h2>
+                    <p>Linkify list group items by using anchor tags instead of list items. No need for individual parents around each element.</p>
+                    <div class="example">
+                        <bootstrap-listgroup>
+                            <bootstrap-listgroup-item href="#" target="_self" class="active">Dapibus ac facilisis in</bootstrap-listgroup-item>
+                            <bootstrap-listgroup-item href="#" target="_self">Cras sit amet nibh libero</bootstrap-listgroup-item>
+                            <bootstrap-listgroup-item href="#" target="_self">Porta ac consectetur ac</bootstrap-listgroup-item>
+                            <bootstrap-listgroup-item href="#" target="_self">Vestibulum at eros</bootstrap-listgroup-item>
+                        </bootstrap-listgroup>
+                    </div>
+
+
+                    <h2>Button items</h2>
+                    <p>List group items may be buttons instead of list items. No need for individual parents around each element.</p>
+                    <div class="example">
+                        <bootstrap-listgroup>
+                            <bootstrap-listgroup-item type="button">Dapibus ac facilisis in</bootstrap-listgroup-item>
+                            <bootstrap-listgroup-item type="button">Cras sit amet nibh libero</bootstrap-listgroup-item>
+                            <bootstrap-listgroup-item type="button">Porta ac consectetur ac</bootstrap-listgroup-item>
+                            <bootstrap-listgroup-item type="button">Vestibulum at eros</bootstrap-listgroup-item>
+                        </bootstrap-listgroup>
+                    </div>
+
+
+                    <h2>Disabled items</h2>
+                    <p>Add <code>.disabled</code> to a <code>&lt;bootstrap-listgroup-item&gt;</code> to gray it out to appear disabled.</p>
+                    <div class="example">
+                        <bootstrap-listgroup>
+                            <bootstrap-listgroup-item class="disabled">Dapibus ac facilisis in</bootstrap-listgroup-item>
+                            <bootstrap-listgroup-item>Cras sit amet nibh libero</bootstrap-listgroup-item>
+                            <bootstrap-listgroup-item>Porta ac consectetur ac</bootstrap-listgroup-item>
+                            <bootstrap-listgroup-item>Vestibulum at eros</bootstrap-listgroup-item>
+                        </bootstrap-listgroup>
+                    </div>
+
+
+                    <h2>Contextual classes</h2>
+                    <p>Use contextual classes to style list items, default or linked. Also includes <code>.active</code> state.</p>
+                    <div class="example">
+                        <bootstrap-listgroup>
+                            <bootstrap-listgroup-item class="list-group-item-success">Dapibus ac facilisis in</bootstrap-listgroup-item>
+                            <bootstrap-listgroup-item class="list-group-item-info">Cras sit amet nibh libero</bootstrap-listgroup-item>
+                            <bootstrap-listgroup-item class="list-group-item-warning">Porta ac consectetur ac</bootstrap-listgroup-item>
+                            <bootstrap-listgroup-item class="list-group-item-danger">Vestibulum at eros</bootstrap-listgroup-item>
+                        </bootstrap-listgroup>
+                    </div>
+
+
+                    <h2>Custom content</h2>
+                    <p>Add nearly any HTML within, even for linked list groups like the one below.</p>
+                    <div class="example">
+                        <bootstrap-listgroup>
+                            <bootstrap-listgroup-item class="active">
+                                <h4 class="list-group-item-heading">List group item heading</h4>
+                                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                            </bootstrap-listgroup-item>
+                            <bootstrap-listgroup-item>
+                                <h4 class="list-group-item-heading">List group item heading</h4>
+                                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                            </bootstrap-listgroup-item>
+                            <bootstrap-listgroup-item>
+                                <h4 class="list-group-item-heading">List group item heading</h4>
+                                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                            </bootstrap-listgroup-item>
+                            <bootstrap-listgroup-item>
+                                <h4 class="list-group-item-heading">List group item heading</h4>
+                                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                            </bootstrap-listgroup-item>
+                        </bootstrap-listgroup>
+                    </div>
+                </div>
+
+
+            <h1 id="panels" class="page-header">Panels</h1>
+            <p>While not always necessary, sometimes you need to put your DOM in a box. For those situations, try the panel component.</p>
+            <div class="component">
+                <h2>Basic example</h2>
+                <p>By default, all the <code>&lt;bootstrap-panel&gt;</code> does is apply some basic border and padding to contain some content.</p>
+                <div class="example">
+                    <bootstrap-panel class="panel-default">
+                        <bootstrap-panel-body>
+                            Basic panel example
+                        </bootstrap-panel-body>
+                    </bootstrap-panel>
+                </div>
+
+                <h2>Panel with heading</h2>
+                <p>Easily add a heading container to your panel with <code>&lt;bootstrap-panel-header&gt;</code>. You may also include any <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> with a <code>.panel-title</code> class to add a pre-styled heading. However, the font sizes of <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> are overridden by <code>&lt;bootstrap-panel-header&gt;</code>.</p>
+                <div class="example">
+                    <bootstrap-panel class="panel-default">
+                        <bootstrap-panel-header>
+                            Panel heading without title
+                        </bootstrap-panel-header>
+                        <bootstrap-panel-body>
+                            Panel content
+                        </bootstrap-panel-body>
+                    </bootstrap-panel>
+
+                    <bootstrap-panel class="panel-default">
+                        <bootstrap-panel-header>
+                            <h3 class="panel-title">Panel title</h3>
+                        </bootstrap-panel-header>
+                        <bootstrap-panel-body>
+                            Panel content
+                        </bootstrap-panel-body>
+                    </bootstrap-panel>
+                </div>
+
+                <h2>Panel with footer</h2>
+                <p>Wrap buttons or secondary text in <code>&lt;bootstrap-panel-footer&gt;</code>. Note that panel footers <strong>do not</strong> inherit colors and borders when using contextual variations as they are not meant to be in the foreground.</p>
+                <div class="example">
+                    <bootstrap-panel class="panel-default">
+                        <bootstrap-panel-body>
+                            Panel content
+                        </bootstrap-panel-body>
+                        <bootstrap-panel-footer>
+                            <h3 class="panel-title">Panel title</h3>
+                        </bootstrap-panel-footer>
+                    </bootstrap-panel>
+                </div>
+
+                    <!--
+                <h4>Contextual alternatives</h4>
+                <bootstrap-panel class="panel-default">
+                    <bootstrap-panel-body>
+                        Panel content
+                    </bootstrap-panel-body>
+                    <bootstrap-panel-footer>
+                        <h3 class="panel-title">Panel title</h3>
+                    </bootstrap-panel-footer>
+                </bootstrap-panel>
+        -->
+
+                    <h2>Contextual alternatives</h2>
+                    <p>Like other components, easily make a panel more meaningful to a particular context by adding any of the contextual state classes.</p>
+                    <div class="example">
+                        <bootstrap-panel class="panel-primary">
+                            <bootstrap-panel-header>
+                                <h3 class="panel-title">Panel title</h3>
+                            </bootstrap-panel-header>
+                            <bootstrap-panel-body>
+                                Panel content
+                            </bootstrap-panel-body>
+                        </bootstrap-panel>
+
+                        <bootstrap-panel class="panel-success">
+                            <bootstrap-panel-header>
+                                <h3 class="panel-title">Panel title</h3>
+                            </bootstrap-panel-header>
+                            <bootstrap-panel-body>
+                                Panel content
+                            </bootstrap-panel-body>
+                        </bootstrap-panel>
+
+                        <bootstrap-panel class="panel-info">
+                            <bootstrap-panel-header>
+                                <h3 class="panel-title">Panel title</h3>
+                            </bootstrap-panel-header>
+                            <bootstrap-panel-body>
+                                Panel content
+                            </bootstrap-panel-body>
+                        </bootstrap-panel>
+
+                        <bootstrap-panel class="panel-warning">
+                            <bootstrap-panel-header>
+                                <h3 class="panel-title">Panel title</h3>
+                            </bootstrap-panel-header>
+                            <bootstrap-panel-body>
+                                Panel content
+                            </bootstrap-panel-body>
+                        </bootstrap-panel>
+
+                        <bootstrap-panel class="panel-danger">
+                            <bootstrap-panel-header>
+                                <h3 class="panel-title">Panel title</h3>
+                            </bootstrap-panel-header>
+                            <bootstrap-panel-body>
+                                Panel content
+                            </bootstrap-panel-body>
+                        </bootstrap-panel>
+                    </div>
+
+                    <h2>With tables</h2>
+                    <p>Add any non-bordered <code>.table</code> within a panel for a seamless design. If there is a <code>&lt;bootstrap-panel-body&gt;</code>, we add an extra border to the top of the table for separation.</p>
+
+                    <div class="example">
+                        <bootstrap-panel class="panel-default">
+                            <bootstrap-panel-header>
+                                <h3 class="panel-title">Panel title</h3>
+                            </bootstrap-panel-header>
+                            <bootstrap-panel-body>
+                                <p>Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            </bootstrap-panel-body>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Username</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </bootstrap-panel>
+                    </div>
+                    <div class="example">
+                        <bootstrap-panel class="panel-default">
+                            <bootstrap-panel-header>
+                                <h3 class="panel-title">Panel title</h3>
+                            </bootstrap-panel-header>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Username</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </bootstrap-panel>
+                    </div>
+
+                    <h2>With list groups</h2>
+                    <p>Easily include full-width <a href="#list-group">list groups</a> within any panel.</p>
+                    <div class="example">
+                        <bootstrap-panel class="panel-default">
+                            <bootstrap-panel-header>Panel heading</bootstrap-panel-header>
+                            <bootstrap-panel-body>
+                                <p>Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            </bootstrap-panel-body>
+                            <bootstrap-listgroup>
+                                <bootstrap-listgroup-item>Cras justo odio</bootstrap-listgroup-item>
+                                <bootstrap-listgroup-item>Dapibus ac facilisis in</bootstrap-listgroup-item>
+                                <bootstrap-listgroup-item>Morbi leo risus</bootstrap-listgroup-item>
+                                <bootstrap-listgroup-item>Porta ac consectetur ac</bootstrap-listgroup-item>
+                                <bootstrap-listgroup-item>Vestibulum at eros</bootstrap-listgroup-item>
+                            </bootstrap-listgroup>
+                        </bootstrap-panel>
+                    </div>
+            </div>
+
+
+            <h1 id="responsive-embed" class="page-header">Responsive embed</h1>
+            <p>Allow browsers to determine video or slideshow dimensions based on the width of their containing block by creating an intrinsic ratio that will properly scale on any device.</p>
+            <p>Rules are directly applied to <code>&lt;iframe&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;video&gt;</code>, and <code>&lt;object&gt;</code> elements; optionally use an explicit descendant class <code>.embed-responsive-item</code> when you want to match the styling for other attributes.</p>
+
+            <div class="component">
+                <!--
+                <h4>Basic example</h4>
+
+                <h4>Iframe</h4>-->
+                <div class="example">
+                    <iframe bootstrap-embed-responsive="16by9" src="//www.youtube.com/embed/zpOULjyy-n8?rel=0"></iframe>
+                </div>
+                    <!--
+        <iframe bootstrap-embed-responsive="4by3" src="//www.youtube.com/embed/zpOULjyy-n8?rel=0"></iframe>
+        <h5>Embed</h5>
+        <embed bootstrap-embed-responsive="16by9" src="//www.youtube.com/embed/zpOULjyy-n8?rel=0"/>
+        <embed bootstrap-embed-responsive="4by3" src="//www.youtube.com/embed/zpOULjyy-n8?rel=0"/>
+        <h5>Object</h5>
+        <object bootstrap-embed-responsive="16by9" data="https://www.youtube.com/embed/KEI4qSrkPAs"></object>
+        <object bootstrap-embed-responsive="4by3" data="https://www.youtube.com/embed/KEI4qSrkPAs"></object>
+
+        <h4>Video</h4>
+        <video bootstrap-embed-responsive="16by9" controls>
+            <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            <source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+            Your browser does not support HTML5 video.
+        </video>
+
+        <video bootstrap-embed-responsive="4by3" controls>
+            <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            <source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+            Your browser does not support HTML5 video.
+        </video>
+        -->
+                </div>
+
+
+
+            <h1 id="wells" class="page-header">Wells</h1>
+            <div class="component">
+
+                <h2>Default well</h2>
+                <p>Use the well as a simple effect on an element to give it an inset effect.</p>
+                <div class="example">
+                    <bootstrap-well>Look, I'm in a well!</bootstrap-well>
+                </div>
+
+                <h2>Optional classes</h2>
+                <p>Control padding and rounded corners with two optional modifier classes.</p>
+                <div class="example">
+                    <bootstrap-well class="well-lg">Look, I'm in a large well!</bootstrap-well>
+                </div>
+                <div class="example">
+                    <bootstrap-well class="well-sm">Look, I'm in a small well!</bootstrap-well>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-3 hidden-xs hidden-sm" role=complementary>
+            <div id="myAffix" data-spy="affix" data-offset-top="300">
+                <ul class="nav">
+                    <li><a href="#dropdowns">Dropdowns</a></li>
+                    <li><a href="#btn-groups">Button groups</a></li>
+                    <li><a href="#btn-dropdowns">Button dropdowns</a></li>
+                    <li><a href="#input-groups">Input groups</a></li>
+                    <li><a href="#nav">Navs</a></li>
+                    <li><a href="#navbar">Navbar</a></li>
+                    <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+                    <li><a href="#pagination">Pagination</a></li>
+                    <li><a href="#labels">Labels</a></li>
+                    <li><a href="#badges">Badges</a></li>
+                    <li><a href="#jumbotron">Jumbotron</a></li>
+                    <li><a href="#page-header">Page header</a></li>
+                    <li><a href="#thumbnails">Thumbnails</a></li>
+                    <li><a href="#alerts">Alerts</a></li>
+                    <li><a href="#progress">Progress bars</a></li>
+                    <li><a href="#media">Media object</a></li>
+                    <li><a href="#list-group">List group</a></li>
+                    <li><a href="#panels">Panels</a></li>
+                    <li><a href="#responsive-embed">Responsive embed</a></li>
+                    <li><a href="#wells">Wells</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

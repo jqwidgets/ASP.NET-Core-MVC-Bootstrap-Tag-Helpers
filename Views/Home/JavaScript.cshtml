@@ -1,0 +1,585 @@
+﻿@{
+    ViewData["Title"] = "Tag Helpers";
+}
+
+<div class="top-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 id="setup">Tag Helpers</h1>
+                <p>Over a dozen Tag Helpers for ASP .NET MVC Core.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9" role="main">
+
+            <h1 id="modals" class="page-header">Modals</h1>
+            <p>Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults.</p>
+            <div class="component">
+                <h2>Live demo</h2>
+                <p>Toggle a modal via JavaScript by clicking the button below. It will slide down and fade in from the top of the page.</p>
+                <div class="example">
+                    <bootstrap-button type="button" class="btn btn-primary btn-lg" bootstrap-toggle-modal="myModal">Launch demo modal</bootstrap-button>
+                    <bootstrap-modal id="myModal" class="fade" aria-labelledby="myModalLabel" data-backdrop="true">
+                        <bootstrap-modal-header>
+                            <bootstrap-button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></bootstrap-button>
+                            <h4 class="modal-title">Modal title</h4>
+                        </bootstrap-modal-header>
+                        <bootstrap-modal-body>
+                            <h4>Text in a modal</h4>
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                            <h4>Popover in a modal</h4>
+                            <p>This <a href="#" role="button" class="btn btn-default popover-test" title="" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title">button</a> should trigger a popover on click.</p>
+                            <h4>Tooltips in a modal</h4>
+                            <p><a href="#" class="tooltip-test" title="" data-original-title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="" data-original-title="Tooltip">that link</a> should have tooltips on hover.</p>
+                            <h4>Overflowing text to show scroll behavior</h4>
+                            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                        </bootstrap-modal-body>
+                        <bootstrap-modal-footer>
+                            <bootstrap-button type="button" class="btn btn-default" data-dismiss="modal">Close</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-primary">Save changes</bootstrap-button>
+                        </bootstrap-modal-footer>
+                    </bootstrap-modal>
+                </div>
+
+                <h2>Optional sizes</h2>
+                <p>Modals have two optional sizes, available via modifier classes to be placed on a <code>.modal-dialog</code>.</p>
+                <div class="example">
+                    <bootstrap-button type="button" class="btn btn-primary" bootstrap-toggle-modal="myModalLarge">Large modal</bootstrap-button>
+                    <bootstrap-modal id="myModalLarge" aria-labelledby="myModalLabel" size="lg">
+                        <bootstrap-modal-header>
+                            <bootstrap-button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></bootstrap-button>
+                            <h4 class="modal-title">Large modal</h4>
+                        </bootstrap-modal-header>
+                        <bootstrap-modal-body>
+                            ...
+                        </bootstrap-modal-body>
+                    </bootstrap-modal>
+
+                    <bootstrap-button type="button" class="btn btn-primary" bootstrap-toggle-modal="myModalSmall">Small modal</bootstrap-button>
+                    <bootstrap-modal id="myModalSmall" aria-labelledby="myModalLabel" size="sm">
+                        <bootstrap-modal-header>
+                            <bootstrap-button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></bootstrap-button>
+                            <h4 class="modal-title">Small modal</h4>
+                        </bootstrap-modal-header>
+                        <bootstrap-modal-body>
+                            ...
+                        </bootstrap-modal-body>
+                    </bootstrap-modal>
+                </div>
+
+                <h2>Using the grid system</h2>
+                <p>To take advantage of the Bootstrap grid system within a modal, just nest <code>.row</code>s within the <code>.modal-body</code> and then use the normal grid system classes.</p>
+                <div class="example">
+                    <bootstrap-button type="button" class="btn btn-primary btn-lg" bootstrap-toggle-modal="myModalGrid"> Launch demo modal </bootstrap-button>
+                    <bootstrap-modal id="myModalGrid" aria-labelledby="myModalLabel" size="lg">
+                        <bootstrap-modal-header>
+                            <bootstrap-button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></bootstrap-button>
+                            <h4 class="modal-title">Modal title</h4>
+                        </bootstrap-modal-header>
+                        <bootstrap-modal-body>
+                            <div class="row">
+                                <div class="col-md-4">.col-md-4</div>
+                                <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+                                <div class="col-md-2 col-md-offset-4">.col-md-2 .col-md-offset-4</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-9">
+                                    Level 1: .col-sm-9
+                                    <div class="row">
+                                        <div class="col-xs-8 col-sm-6">
+                                            Level 2: .col-xs-8 .col-sm-6
+                                        </div>
+                                        <div class="col-xs-4 col-sm-6">
+                                            Level 2: .col-xs-4 .col-sm-6
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </bootstrap-modal-body>
+                        <bootstrap-modal-footer>
+                            <bootstrap-button type="button" class="btn btn-default" data-dismiss="modal">Close</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-primary">Save changes</bootstrap-button>
+                        </bootstrap-modal-footer>
+                    </bootstrap-modal>
+                </div>
+
+                <h2>Varying modal content based on trigger button</h2>
+                <p>Have a bunch of buttons that all trigger the same modal, just with slightly different contents? Use <code>event.relatedTarget</code> and <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_data_attributes">HTML <code>data-*</code> attributes</a> (possibly <a href="http://api.jquery.com/data/">via jQuery</a>) to vary the contents of the modal depending on which button was clicked. See the Modal Events docs for details on <code>relatedTarget</code>,</p>
+                <div class="example">
+                    <bootstrap-button type="button" class="btn btn-primary" bootstrap-toggle-modal="exampleModal" data-whatever="@@mdo">Open modal for @@mdo</bootstrap-button>
+                    <bootstrap-button type="button" class="btn btn-primary" bootstrap-toggle-modal="exampleModal" data-whatever="@@fat">Open modal for @@fat</bootstrap-button>
+                    <bootstrap-button type="button" class="btn btn-primary" bootstrap-toggle-modal="exampleModal" data-whatever="@@getbootstrap">Open modal for @@getbootstrap</bootstrap-button>
+                    ...more buttons...
+                    <bootstrap-modal id="exampleModal" aria-labelledby="myModalLabel">
+                        <bootstrap-modal-header>
+                            <bootstrap-button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></bootstrap-button>
+                            <h4 class="modal-title">Modal title</h4>
+                        </bootstrap-modal-header>
+                        <bootstrap-modal-body>
+                            <form>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="control-label">Recipient:</label>
+                                    <input type="text" class="form-control" id="recipient-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-text" class="control-label">Message:</label>
+                                    <textarea class="form-control" id="message-text"></textarea>
+                                </div>
+                            </form>
+                        </bootstrap-modal-body>
+                        <bootstrap-modal-footer>
+                            <bootstrap-button type="button" class="btn btn-default" data-dismiss="modal">Close</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-primary">Save changes</bootstrap-button>
+                        </bootstrap-modal-footer>
+                    </bootstrap-modal>
+                    <script>
+                        $('#exampleModal').on('show.bs.modal', function (event) {
+                            var button = $(event.relatedTarget);
+                            var recipient = button.data('whatever');
+                            var modal = $(this);
+                            modal.find('.modal-title').text('New message to ' + recipient);
+                            modal.find('.modal-body input').val(recipient);
+                        })
+                    </script>
+                </div>
+            </div>
+
+
+            <h1 id="dropdowns" class="page-header">Dropdowns</h1>
+            <p>Add dropdown menus to nearly anything with this simple plugin, including the navbar, tabs, and pills.</p>
+            <div class="component">
+                <h2>Within a navbar</h2>
+                <div class="example">
+                    <nav id="navbar-example" class="navbar navbar-default navbar-static">
+                        <div class="container-fluid">
+                            <div class="navbar-header"> <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="#">Project Name</a> </div>
+                            <div class="collapse navbar-collapse bs-example-js-navbar-collapse">
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                        <bootstrap-dropdown class="dropdown">
+                                            <bootstrap-dropdown-label id="newDropDown1" class="btn btn-link" content=" DropDown Button "></bootstrap-dropdown-label>
+                                            <bootstrap-dropdown-menu labelledby="newDropDown1">
+                                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                            </bootstrap-dropdown-menu>
+                                        </bootstrap-dropdown>
+                                    </li>
+                                    <li>
+                                        <bootstrap-dropdown class="dropdown">
+                                            <bootstrap-dropdown-label id="newDropDown2" class="btn btn-link" content=" DropDown Button "></bootstrap-dropdown-label>
+                                            <bootstrap-dropdown-menu labelledby="newDropDown2">
+                                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                            </bootstrap-dropdown-menu>
+                                        </bootstrap-dropdown>
+                                    </li>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li>
+                                        <bootstrap-dropdown class="dropdown">
+                                            <bootstrap-dropdown-label id="newDropDown3" class="btn btn-link" content=" DropDown Button "></bootstrap-dropdown-label>
+                                            <bootstrap-dropdown-menu labelledby="newDropDown3">
+                                                <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                                <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                                <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                            </bootstrap-dropdown-menu>
+                                        </bootstrap-dropdown>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+                <h2>Within pills</h2>
+                <div class="example">
+                    <bootstrap-nav class="nav-pills" role="tablist">
+                        <bootstrap-nav-item class="active"><a href="#">Regular link</a></bootstrap-nav-item>
+                        <bootstrap-nav-item>
+                            <bootstrap-dropdown class="dropdown">
+                                <bootstrap-dropdown-label id="newDropDown1a" class="btn btn-default" content=" Dropdown "></bootstrap-dropdown-label>
+                                <bootstrap-dropdown-menu labelledby="newDropDown1a">
+                                    <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                    <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                </bootstrap-dropdown-menu>
+                            </bootstrap-dropdown>
+                        </bootstrap-nav-item>
+                        <bootstrap-nav-item>
+                            <bootstrap-dropdown class="dropdown">
+                                <bootstrap-dropdown-label id="newDropDown2a" class="btn btn-default" content=" Dropdown "></bootstrap-dropdown-label>
+                                <bootstrap-dropdown-menu labelledby="newDropDown2a">
+                                    <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                    <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                </bootstrap-dropdown-menu>
+                            </bootstrap-dropdown>
+                        </bootstrap-nav-item>
+                        <bootstrap-nav-item class="dropdown">
+                            <bootstrap-dropdown class="dropdown">
+                                <bootstrap-dropdown-label id="newDropDown3a" class="btn btn-default" content=" Dropdown "></bootstrap-dropdown-label>
+                                <bootstrap-dropdown-menu labelledby="newDropDown2a">
+                                    <bootstrap-dropdown-menu-item><a href="#">Action</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-item><a href="#">Another action</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-item><a href="#">Something else here</a></bootstrap-dropdown-menu-item>
+                                    <bootstrap-dropdown-menu-separator></bootstrap-dropdown-menu-separator>
+                                    <bootstrap-dropdown-menu-item><a href="#">Separated link</a></bootstrap-dropdown-menu-item>
+                                </bootstrap-dropdown-menu>
+                            </bootstrap-dropdown>
+                        </bootstrap-nav-item>
+                    </bootstrap-nav>
+                </div>
+            </div>
+
+
+            <h1 id="tabs" class="page-header">Togglable tabs</h1>
+            <p>Add quick, dynamic tab functionality to transition through panes of local content, even via dropdown menus. <strong>Nested tabs are not supported.</strong></p>
+            <div class="component">
+                <div class="example">
+                    <bootstrap-tabs>
+                        <bootstrap-tabs-nav id="tabs3" class="">
+                            <bootstrap-tab active="true"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></bootstrap-tab>
+                            <bootstrap-tab><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></bootstrap-tab>
+                            <bootstrap-tab>
+                                <bootstrap-dropdown>
+                                    <bootstrap-dropdown-label id="bootstrapDropdown" class="btn btn-link" content=" Dropdown "></bootstrap-dropdown-label>
+                                    <bootstrap-dropdown-menu labelledby="bootstrapDropdown">
+                                        <bootstrap-dropdown-menu-item><a href="#dropdown1">@@fat</a></bootstrap-dropdown-menu-item>
+                                        <bootstrap-dropdown-menu-item><a href="#dropdown2">@@mdo</a></bootstrap-dropdown-menu-item>
+                                    </bootstrap-dropdown-menu>
+                                </bootstrap-dropdown>
+                            </bootstrap-tab>
+                        </bootstrap-tabs-nav>
+                        <bootstrap-tabs-content>
+                            <bootstrap-tab-pane active="true" id="home" class="fade in">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</bootstrap-tab-pane>
+                            <bootstrap-tab-pane id="profile" class="fade">Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</bootstrap-tab-pane>
+                            <bootstrap-tab-pane id="dropdown1" class="fade">Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</bootstrap-tab-pane>
+                            <bootstrap-tab-pane id="dropdown2" class="fade">Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</bootstrap-tab-pane>
+                        </bootstrap-tabs-content>
+                    </bootstrap-tabs>
+                </div>
+
+
+                <h1 id="tooltips" class="page-header">Bootstrap tooltip</h1>
+                <p>Inspired by the excellent jQuery.tipsy plugin written by Jason Frame; Tooltips are an updated version, which don't rely on images, use CSS3 for animations, and data-attributes for local title storage.</p>
+
+                <h2>Basic example</h2>
+                <p>Hover over the links below to see tooltips:</p>
+                <div class="example">
+                    <p>
+                        Tight pants next level keffiyeh <a href="#" bootstrap-tooltip="Default tooltip">you probably</a> haven't heard of them.
+                        Photo booth beard raw denim letterpress vegan messenger bag stumptown.
+                        Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel <a href="#" bootstrap-tooltip="Another tooltip">have a</a>
+                        terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats.
+                        Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray.
+                        A really ironic artisan <a href="#" bootstrap-tooltip="Another one here too">whatever keytar</a>, scenester farm-to-table banksy Austin
+                        <a href="#" bootstrap-tooltip="The last tip!">twitter handle</a> freegan cred raw denim single-origin coffee viral.
+                    </p>
+                </div>
+
+                <h2>Static tooltip</h2>
+                <p>Four options are available: top, right, bottom, and left aligned.</p>
+                <div class="example">
+                    <span bootstrap-tooltip="btn123z" placement="left" static="true">Tooltip on the left</span>
+                    <span bootstrap-tooltip="btn123d" placement="top" static="true">Tooltip on the top</span>
+                    <span bootstrap-tooltip="btn123f" placement="bottom" static="true">Tooltip on the bottom</span>
+                    <span bootstrap-tooltip="btn123g" placement="right" static="true">Tooltip on the right</span>
+                </div>
+
+                <h2>Four directions</h2>
+                <div class="example">
+                    <bootstrap-button bootstrap-tooltip-toggle="btn1" bootstrap-tooltip="Tooltip on the left" type="button" id="btn1" class="btn btn-default" data-placement='left'>Tooltip on left</bootstrap-button>
+                    <bootstrap-button bootstrap-tooltip-toggle="btn2" bootstrap-tooltip="Tooltip on the top" type="button" id="btn2" class="btn btn-default" data-placement='top'>Tooltip on top</bootstrap-button>
+                    <bootstrap-button bootstrap-tooltip-toggle="btn3" bootstrap-tooltip="Tooltip on the bottom" type="button" id="btn3" class="btn btn-default" data-placement='bottom'>Tooltip on bottom</bootstrap-button>
+                    <bootstrap-button bootstrap-tooltip-toggle="btn4" bootstrap-tooltip="Tooltip on the right" type="button" id="btn4" class="btn btn-default" data-placement='right'>Tooltip on right</bootstrap-button>
+                </div>
+
+
+                <h1 id="popovers" class="page-header">Popovers</h1>
+                <p>Add small overlays of content, like those on the iPad, to any element for housing secondary information.</p>
+                <p>Popovers whose both title and content are zero-length are never displayed.</p>
+
+                <h2>Static popover</h2>
+                <p>Four options are available: top, right, bottom, and left aligned.</p>
+                <div class="example">
+                    <div bootstrap-popover="popover1a1" static="true" placement='top' title="Popover top" content="Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum." style="float:left;">Popover on top</div>
+                    <div bootstrap-popover="popover1a2" static="true" placement='right' title="Popover right" content="Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum." style="float:left;">Popover on right</div>
+                    <div bootstrap-popover="popover1a3" static="true" placement='bottom' title="Popover bottom" content="Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum." style="float:left !important;">Popover on bottom</div>
+                    <div bootstrap-popover="popover1a4" static="true" placement='left' title="Popover left" content="Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum." style="float:left !important;">Popover on left</div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <h2>Live demo</h2>
+                <div class="example">
+                    <bootstrap-button bootstrap-popover="popover1b" type="button" id="myButton1b" class="btn btn-lg btn-danger" data-placement='right' title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</bootstrap-button>
+                </div>
+
+                <h2>Four directions</h2>
+                <div class="example">
+                    <bootstrap-button bootstrap-popover="popover1" type="button" id="myButton1" class="btn btn-default" data-placement='right' data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on right</bootstrap-button>
+                    <bootstrap-button bootstrap-popover="popover2" type="button" id="myButton2" class="btn btn-default" data-placement='top' data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on top</bootstrap-button>
+                    <bootstrap-button bootstrap-popover="popover3" type="button" id="myButton3" class="btn btn-default" data-placement='bottom' data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on bottom</bootstrap-button>
+                    <bootstrap-button bootstrap-popover="popover4" type="button" id="myButton4" class="btn btn-default" data-placement='left' data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on left</bootstrap-button>
+                </div>
+
+                <h2>Dismiss on next click</h2>
+                <div class="example">
+                    <bootstrap-button bootstrap-popover="popover1c" type="button" id="myButton1c" class="btn btn-lg btn-danger" data-placement='right' data-toggle="popover" data-trigger="focus" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</bootstrap-button>
+                </div>
+            </div>
+
+
+            <h1 id="alerts" class="page-header">Alert messages</h1>
+            <p>Add dismiss functionality to all alert messages with this plugin.</p>
+            <p>When using a <code>.close</code> button, it must be the first child of the <code>.alert-dismissible</code> and no text content may come before it in the markup.</p>
+            <div class="component">
+                <div class="example">
+                    <bootstrap-alert class="alert-warning alert-dismissible fade in">
+                        <bootstrap-alert-close><span aria-hidden="true">×</span></bootstrap-alert-close>
+                        <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
+                    </bootstrap-alert>
+
+                    <bootstrap-alert class="alert-danger alert-dismissible fade in">
+                        <bootstrap-alert-close><span aria-hidden="true">×</span></bootstrap-alert-close>
+                        <h4>Oh snap! You got an error!</h4>
+                        <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                        <p>
+                            <bootstrap-button type="button" class="btn btn-danger">Take this action</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-default">Or do this</bootstrap-button>
+                        </p>
+                    </bootstrap-alert>
+                </div>
+            </div>
+
+
+            <h1 id="buttons" class="page-header">Button Demos</h1>
+            <p>Do more with buttons. Control button states or create groups of buttons for more components like toolbars.</p>
+            <div class="component">
+                <h2>Stateful</h2>
+                <p>Add <code>data-loading-text="Loading..."</code> to use a loading state on a button.</p>
+                <div class="example">
+                    <p>
+                        <bootstrap-button type="button" id="myButton" class="btn btn-primary" loading-text="Loading..." autocomplete="off">Loading state</bootstrap-button>
+                        <script>
+                            $('#myButton').on('click', function () {
+                                var $btn = $(this).button('loading');
+                                setTimeout(function () { $btn.button('reset'); }, 2000);
+                            })
+                        </script>
+                    </p>
+                </div>
+
+                <h2>Single toggle</h2>
+                <p>Add <code>data-toggle="button"</code> to activate toggling on a single button.</p>
+                <div class="example">
+                    <p>
+                        <bootstrap-button type="button" id="myButton2" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Single toggle</bootstrap-button>
+                    </p>
+                </div>
+
+                <h2>Checkbox / Radio</h2>
+                <p>Add <code>data-toggle="buttons"</code> to a <code>.btn-group</code> containing checkbox or radio inputs to enable toggling in their respective styles.</p>
+                <div class="example">
+                    <p>
+                        <bootstrap-button-group>
+                            <bootstrap-button type="button" class="btn btn-primary" autocomplete="off"><input type="checkbox" autocomplete="off"> Checkbox 1 (pre-checked)</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-primary" autocomplete="off"><input type="checkbox" autocomplete="off"> Checkbox 2</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-primary" autocomplete="off"><input type="checkbox" autocomplete="off"> Checkbox 3</bootstrap-button>
+                        </bootstrap-button-group>
+                    </p>
+                    <p>
+                        <bootstrap-button-group>
+                            <bootstrap-button type="button" class="btn btn-primary" autocomplete="off"><input type="radio" name="options" id="option1" autocomplete="off" checked> Radio 1 (preselected)</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-primary" autocomplete="off"><input type="radio" name="options" id="option2" autocomplete="off"> Radio 2</bootstrap-button>
+                            <bootstrap-button type="button" class="btn btn-primary" autocomplete="off"><input type="radio" name="options" id="option3" autocomplete="off"> Radio 3</bootstrap-button>
+                        </bootstrap-button-group>
+                    </p>
+                </div>
+            </div>
+
+
+            <h1 id="collapse" class="page-header">Collapse Demos</h1>
+            <p class="lead">Flexible plugin that utilizes a handful of classes for easy toggle behavior.</p>
+            <div class="component">
+                <h2>Example</h2>
+                <div class="example">
+                    <p>
+                        <bootstrap-button element="a" href="#collapseExample" type="button" role="button" id="triggerBB" class="btn btn-primary" aria-controls="collapseExample">Link with href</bootstrap-button>
+                        <bootstrap-button type="button" id="triggerBB" class="btn btn-primary" data-target="#collapseExample">Button with data-target</bootstrap-button>
+                    </p>
+                    <bootstrap-collapse trigger="#triggerA, #triggerB, #triggerBB" id="collapseExample">
+                        <div class="well"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</div>
+                    </bootstrap-collapse>
+                </div>
+
+                <h2>Accordion example</h2>
+                <p>Extend the default collapse behavior to create an accordion with the panel component.</p>
+                <div class="example">
+                    <bootstrap-panel-group id="accordion">
+                        <bootstrap-panel class="panel-default">
+                            <bootstrap-panel-header role="tab" id="triggerA2div">
+                                <bootstrap-button type="button" id="triggerA2" class="btn btn-link">Collapsible Group Item #1</bootstrap-button>
+                            </bootstrap-panel-header>
+                            <bootstrap-collapse trigger="#triggerA2" id="accordion1">
+                                <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                            </bootstrap-collapse>
+                        </bootstrap-panel>
+                        <bootstrap-panel class="panel-default">
+                            <bootstrap-panel-header role="tab" id="triggerB2div">
+                                <bootstrap-button type="button" id="triggerB2" class="btn btn-link">Collapsible Group Item #2</bootstrap-button>
+                            </bootstrap-panel-header>
+                            <bootstrap-collapse trigger="#triggerB2" id="accordion2">
+                                <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                            </bootstrap-collapse>
+                        </bootstrap-panel>
+                        <bootstrap-panel class="panel-default">
+                            <bootstrap-panel-header role="tab" id="triggerBB2div">
+                                <bootstrap-button type="button" id="triggerBB2" class="btn btn-link">Collapsible Group Item #3</bootstrap-button>
+                            </bootstrap-panel-header>
+                            <bootstrap-collapse trigger="#triggerBB2" id="accordion3">
+                                <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                            </bootstrap-collapse>
+                        </bootstrap-panel>
+                        <script>
+                            $('#triggerA2').on('click', function () {
+                                $('#accordion2').collapse('hide');
+                                $('#accordion3').collapse('hide');
+                            });
+                            $('#triggerB2').on('click', function () {
+                                $('#accordion1').collapse('hide');
+                                $('#accordion3').collapse('hide');
+                            });
+                            $('#triggerBB2').on('click', function () {
+                                $('#accordion2').collapse('hide');
+                                $('#accordion1').collapse('hide');
+                            });
+                        </script>
+                    </bootstrap-panel-group>
+                </div>
+
+                <h2>Collapsible list group</h2>
+                <div class="example">
+                    <bootstrap-panel-group>
+                        <bootstrap-panel class="panel-default">
+                            <bootstrap-panel-header role="tab" id="collapseListGroupHeading1">
+                                <bootstrap-button type="button" id="myButton1qwe" class="btn btn-link">Collapsible list group</bootstrap-button>
+                            </bootstrap-panel-header>
+                            <bootstrap-collapse trigger="#myButton1qwe" id="collapseExqwe">
+                                <bootstrap-listgroup>
+                                    <bootstrap-listgroup-item>Bootply</bootstrap-listgroup-item>
+                                    <bootstrap-listgroup-item>One itmus ac facilin</bootstrap-listgroup-item>
+                                    <bootstrap-listgroup-item>Second eros</bootstrap-listgroup-item>
+                                </bootstrap-listgroup>
+                                <div class="panel-footer">Footer</div>
+                            </bootstrap-collapse>
+                        </bootstrap-panel>
+                    </bootstrap-panel-group>
+                </div>
+            </div>
+
+
+            <h1 id="carousel" class="page-header">Carousel Demos</h1>
+            <p>A slideshow component for cycling through elements, like a carousel. <strong>Nested carousels are not supported.</strong></p>
+            <div class="component">
+                <h2>Basic example</h2>
+                <div class="example">
+                    <bootstrap-carousel class="slide" id="carousel-example-generic1" style="width:100%; display:block;">
+                        <bootstrap-carousel-indicators style="display:block;">
+                            <bootstrap-carousel-indicator target="#carousel-example-generic1" slide-to="0" active="true" class=""></bootstrap-carousel-indicator>
+                            <bootstrap-carousel-indicator target="#carousel-example-generic1" slide-to="1"></bootstrap-carousel-indicator>
+                            <bootstrap-carousel-indicator target="#carousel-example-generic1" slide-to="2"></bootstrap-carousel-indicator>
+                        </bootstrap-carousel-indicators>
+                        <bootstrap-carousel-items style="display:block;">
+                            <bootstrap-carousel-item active="true"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDkwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzkwMHg1MDAvYXV0by8jNzc3OiM1NTUvdGV4dDpGaXJzdCBzbGlkZQpDcmVhdGVkIHdpdGggSG9sZGVyLmpzIDIuNi4wLgpMZWFybiBtb3JlIGF0IGh0dHA6Ly9ob2xkZXJqcy5jb20KKGMpIDIwMTItMjAxNSBJdmFuIE1hbG9waW5za3kgLSBodHRwOi8vaW1za3kuY28KLS0+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48IVtDREFUQVsjaG9sZGVyXzE1NTAxMzVhNWE1IHRleHQgeyBmaWxsOiM1NTU7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6NDVwdCB9IF1dPjwvc3R5bGU+PC9kZWZzPjxnIGlkPSJob2xkZXJfMTU1MDEzNWE1YTUiPjxyZWN0IHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjNzc3Ii8+PGc+PHRleHQgeD0iMzA4LjI5Njg3NSIgeT0iMjcwLjEiPkZpcnN0IHNsaWRlPC90ZXh0PjwvZz48L2c+PC9zdmc+" /></bootstrap-carousel-item>
+                            <bootstrap-carousel-item><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDkwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzkwMHg1MDAvYXV0by8jNjY2OiM0NDQvdGV4dDpTZWNvbmQgc2xpZGUKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTUwMTM1ODkzZSB0ZXh0IHsgZmlsbDojNDQ0O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjQ1cHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTAxMzU4OTNlIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NiIvPjxnPjx0ZXh0IHg9IjI2NC45NTMxMjUiIHk9IjI3MC4xIj5TZWNvbmQgc2xpZGU8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" /></bootstrap-carousel-item>
+                            <bootstrap-carousel-item><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDkwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzkwMHg1MDAvYXV0by8jNTU1OiMzMzMvdGV4dDpUaGlyZCBzbGlkZQpDcmVhdGVkIHdpdGggSG9sZGVyLmpzIDIuNi4wLgpMZWFybiBtb3JlIGF0IGh0dHA6Ly9ob2xkZXJqcy5jb20KKGMpIDIwMTItMjAxNSBJdmFuIE1hbG9waW5za3kgLSBodHRwOi8vaW1za3kuY28KLS0+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48IVtDREFUQVsjaG9sZGVyXzE1NTAxMzU0ZTMyIHRleHQgeyBmaWxsOiMzMzM7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6NDVwdCB9IF1dPjwvc3R5bGU+PC9kZWZzPjxnIGlkPSJob2xkZXJfMTU1MDEzNTRlMzIiPjxyZWN0IHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjNTU1Ii8+PGc+PHRleHQgeD0iMjk4LjMyMDMxMjUiIHk9IjI3MC4xIj5UaGlyZCBzbGlkZTwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" /></bootstrap-carousel-item>
+                        </bootstrap-carousel-items>
+                        <bootstrap-carousel-control type="left" slide="prev" target="#carousel-example-generic1"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span></bootstrap-carousel-control>
+                        <bootstrap-carousel-control type="right" slide="next" target="#carousel-example-generic1"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </bootstrap-carousel-control>
+                    </bootstrap-carousel>
+                </div>
+
+                <h2>Optional captions</h2>
+                <p>Add captions to your slides easily with the <code>.carousel-caption</code> element within any <code>.item</code>. Place just about any optional HTML within there and it will be automatically aligned and formatted.</p>
+                <div class="example">
+                    <bootstrap-carousel class="slide" id="carousel-example-generic2" style="width:100%; display:block;">
+                        <bootstrap-carousel-indicators style="display:block;">
+                            <bootstrap-carousel-indicator target="#carousel-example-generic2" slide-to="0" active="true" class=""></bootstrap-carousel-indicator>
+                            <bootstrap-carousel-indicator target="#carousel-example-generic2" slide-to="1"></bootstrap-carousel-indicator>
+                            <bootstrap-carousel-indicator target="#carousel-example-generic2" slide-to="2"></bootstrap-carousel-indicator>
+                        </bootstrap-carousel-indicators>
+                        <bootstrap-carousel-items style="display:block;">
+                            <bootstrap-carousel-item active="true">
+                                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDkwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzkwMHg1MDAvYXV0by8jNzc3OiM3NzcKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTUwMTM1Yjk4OSB0ZXh0IHsgZmlsbDojNzc3O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjQ1cHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTAxMzViOTg5Ij48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjxnPjx0ZXh0IHg9IjMzMy4yMTA5Mzc1IiB5PSIyNzAuMSI+OTAweDUwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" />
+                                <bootstrap-carousel-caption>
+                                    <h3>First slide label</h3> <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                </bootstrap-carousel-caption>
+                            </bootstrap-carousel-item>
+                            <bootstrap-carousel-item>
+                                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDkwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzkwMHg1MDAvYXV0by8jNjY2OiM2NjYKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTUwMTM1YTViNSB0ZXh0IHsgZmlsbDojNjY2O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjQ1cHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTAxMzVhNWI1Ij48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NiIvPjxnPjx0ZXh0IHg9IjMzMy4yMTA5Mzc1IiB5PSIyNzAuMSI+OTAweDUwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" />
+                                <bootstrap-carousel-caption>
+                                    <h3>Second slide label</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </bootstrap-carousel-caption>
+                            </bootstrap-carousel-item>
+                            <bootstrap-carousel-item>
+                                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDkwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzkwMHg1MDAvYXV0by8jNTU1OiM1NTUKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTUwMTM1NTA2OCB0ZXh0IHsgZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjQ1cHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTAxMzU1MDY4Ij48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSIvPjxnPjx0ZXh0IHg9IjMzMy4yMTA5Mzc1IiB5PSIyNzAuMSI+OTAweDUwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" />
+                                <bootstrap-carousel-caption>
+                                    <h3>Third slide label</h3> <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                </bootstrap-carousel-caption>
+                            </bootstrap-carousel-item>
+                        </bootstrap-carousel-items>
+                        <bootstrap-carousel-control type="left" slide="prev" target="#carousel-example-generic2"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span></bootstrap-carousel-control>
+                        <bootstrap-carousel-control type="right" slide="next" target="#carousel-example-generic2"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </bootstrap-carousel-control>
+                    </bootstrap-carousel>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 hidden-xs hidden-sm" role=complementary>
+            <div id="myAffix" data-spy="affix" data-offset-top="300">
+                <ul class="nav">
+                    <li><a href='#modals'>Modal</a></li>
+                    <li><a href='#dropdowns'>Dropdown</a></li>
+                    <li><a href='#tabs'>Tab</a> </li>
+                    <li><a href='#tooltips'>Tooltip</a></li>
+                    <li><a href='#popovers'>Popover</a></li>
+                    <li><a href='#alerts'>Alert</a></li>
+                    <li><a href='#buttons'>Button</a></li>
+                    <li><a href='#collapse'>Collapse</a></li>
+                    <li><a href='#carousel'>Carousel</a></li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>

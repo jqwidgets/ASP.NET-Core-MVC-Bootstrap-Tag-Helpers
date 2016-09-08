@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "Alert TagHelper";
+}
+<h2>Alert Tag Helper</h2>
+<hr />
+
+<p>
+    <i class="small">contributed by <a href="http://weblog.west-wind.com">Rick Strahl</a></i>
+</p>
+
+<p>
+    This tag helper combines the <b>Bootstrap alert box</b> with <b>font-awesome</b> icons to provide
+    a less verbose alert/error display. Use plain text or text retrieved from your model to display
+    content. If the <code>message</code> and <code>header</code>
+    attributes are empty nothing is displayed, otherwise the alert box shows. Messages are displayed in the
+    bootstrap alert themes and display with an appropriate icon that you can optionally override.
+</p>
+
+<div class="sample">
+    <h3>Default Error</h3>
+    <alert message="@Model.Message">
+    </alert>
+
+    <h4>Code:</h4>
+    <pre><code class="html">&lt;alert message=&quot;@@Model.Message&quot;&gt;&lt;/alert&gt;</code></pre>
+</div>
+
+<div class="sample">
+    <h3>With Header</h3>
+    <alert header="@Model.Header" message="@Model.Message">
+    </alert>
+
+    <h4>Code:</h4>
+    <pre><code class="html">&lt;alert header=&quot;@@Model.Header&quot; message=&quot;@@Model.Message&quot;&gt;
+&lt;/alert&gt;</code></pre>
+</div>
+
+
+<div class="sample">
+    <h3>Icon Modes</h3>
+    <alert message="Payment has been processed." icon="success">
+    </alert>
+
+    <alert message="Customer information has been saved." icon="info">
+    </alert>
+
+    <alert message="Your account has expired." icon="danger">
+    </alert>
+
+    <alert message="Unable to save customer info." icon="warning">
+    </alert>
+
+    <h4>Code:</h4>
+    <pre><code class="html">&lt;alert message=&quot;Payment has been processed.&quot; icon=&quot;success&quot;&gt;
+&lt;/alert&gt;
+&lt;alert message=&quot;Customer information has been saved.&quot; icon=&quot;info&quot;&gt;
+&lt;/alert&gt;
+&lt;alert message=&quot;Your account has expired.&quot; icon=&quot;danger&quot;&gt;
+&lt;/alert&gt;
+&lt;alert message=&quot;Unable to save customer info.&quot; icon=&quot;warning&quot;&gt;
+&lt;/alert&gt;</code></pre>
+</div>
+
+<div class="sample">
+    <h3>Dismissable Alert</h3>
+    <alert message="Click on the  button to send a test email."
+           dismissible="true"
+           icon="info">
+    </alert>
+
+    <h4>Code:</h4>
+    <pre><code class="html">&lt;alert message=&quot;Click on the  button to send a test email.&quot;
+       dismissible=&quot;true&quot;
+       icon=&quot;info&quot;&gt;
+&lt;/alert&gt;</code></pre>
+</div>
+
+<div class="sample">
+    <h3>Html Text in Message</h3>
+    <alert message="Click on the <b>Test Message</b> button to send a test email."
+           message-as-html="true"
+           icon="info">
+    </alert>
+
+    <h4>Code:</h4>
+    <pre><code class="html">&lt;alert message=&quot;Click on the &lt;b&gt;Test&lt;/b&gt; button to send a test email.&quot;
+       message-as-html=&quot;true&quot;
+       icon=&quot;info&quot; dismissible=&quot;true&quot;&gt;
+&lt;/alert&gt;</code></pre>
+    <p class="small">
+        You can use the <code>message-as-html</code> and <code>header-as-html</code> attributes to specify that the text
+        should not be HTML encoded as it would be otherwise.
+
+        If you bind from a model make sure you use <code>@@Html.RawHtml()</code> into the `header` or `message` attributes
+        and as always be sure this is safe and won't allow for XSS attacks.
+    </p>
+</div>
+
+<div class="sample">
+    <h3>No Icon</h3>
+    <alert message="Updated completed. Ready for the next step? Click the button below."
+            icon="none" alert-class="info">
+    </alert>
+
+    <h4>Code:</h4>
+    <pre><code class="html">&lt;alert message=&quot;@@Model.Message&quot;&gt;&lt;/alert&gt;</code></pre>
+</div>

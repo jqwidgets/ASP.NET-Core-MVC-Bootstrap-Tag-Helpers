@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap ASP .NET Core MVC tag helpers - @ViewData["Title"]</title>
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/bootstrap.mvc.css" />
+        @*<link rel="stylesheet" href="~/lib/fontawesome/css/font-awesome.css">
+            <link rel="stylesheet" href="~/lib/highlightjs/styles/zenburn.css">*@
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        @*<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+                  asp-fallback-href="~/lib/fontawesome/css/font-awesome.min.css"
+                  asp-fallback-test-class="fa" asp-fallback-test-property="font-family" asp-fallback-test-value="FontAwesome" />
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/zenburn.min.css"
+                  asp-fallback-href="~/lib/highlightjs/styles/zenburn.css"
+                  asp-fallback-test-class="hljs" asp-fallback-test-property="display" asp-fallback-test-value="block">*@
+        <link rel="stylesheet" href="~/css/site.css" asp-file-version="true" />
+    </environment>
+</head>
+<body data-spy="scroll" data-target="#myAffix" data-offset="0">
+    <div class="navbar navbar-inverse jqwidgets-navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-controller="Home" asp-action="Index" class="navbar-brand">
+                    <div class="header-title">Bootstrap ASP .NET Core MVC tag helpers</div>
+                    <div class="header-subtitle">by jQWidgets</div>
+                </a><br />
+
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-controller="Home" asp-action="Index"><i class="fa fa-home"></i>Overview</a></li>
+                    @* <li><a asp-controller="Home" asp-action="About"><i class="fa fa-list-ul"></i> Summary</a></li>
+                        <li><a asp-controller="Home" asp-action="Contact"><i class="fa fa-github"></i> GitHub</a></li>
+                                        <li><a asp-controller="Home" asp-action="Overview"><i class="fa fa-home"></i>Overview</a></li>*@
+                    <li><a asp-controller="Home" asp-action="Setup"><i class="fa fa-home"></i>Setup & Install</a></li>
+                    <li><a asp-controller="Home" asp-action="Components"><i class="fa fa-home"></i>Basic Tag Helpers</a></li>
+                    <li><a asp-controller="Home" asp-action="JavaScript"><i class="fa fa-home"></i>Tag Helpers</a></li>
+                </ul>
+                @RenderSection("navbar", required: false)
+            </div>
+        </div>
+    </div>
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        @* <script src="~/lib/highlightjs/highlight.pack.js"></script>*@
+        <script src="~/js/site.js"></script>
+        <script src="~/js/format.js"></script>
+    </environment>
+    <div class="container-fluid body-content">
+        @RenderBody()
+        <div class="page-footer">
+                <div class="container">
+                    <footer>
+                        <p>jQWidgets &copy; 2011-2016. All Rights Reserved.</p>
+                    </footer>
+                </div>
+            </div>
+    </div>
+    <environment names="Staging,Production">
+        <script src="//ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+        @*<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"
+                    asp-fallback-src="~/lib/highlightjs/highlight.pack.min.js"
+                    asp-fallback-test="window.hljs">
+            </script>*@
+        <script src="~/js/format.js"
+                asp-fallback-src="~/js/format.js"
+                asp-fallback-test="window.hljs">
+        </script>
+        <script src="~/js/site.js" asp-file-version="true"></script>
+    </environment>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
