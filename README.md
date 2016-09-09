@@ -32,7 +32,7 @@ ASP.NET Core MVC Bootstrap tag helpers. This package includes tag helpers for th
 * Install the Tag Helpers. To install ASP.NET Core MVC Bootstrap Tag Helpers, run the following command in the Package Manager Console
 ```Install-Package jQWidgets.AspNetCore.Mvc.Bootstrap.TagHelpers```.
 * Update `_ViewImports.cshtml`.
-    ```
+    ```html
     @using jQWidgets.AspNetCore.Mvc.Bootstrap.Demos
     @using jQWidgets.AspNetCore.Mvc.Bootstrap.TagHelpers
     @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
@@ -40,7 +40,7 @@ ASP.NET Core MVC Bootstrap tag helpers. This package includes tag helpers for th
     @inject Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration TelemetryConfiguration
     ```
 * Add a reference to `bootstrap.mvc.css` in `_Layout.cshtml`. `bootstrap.mvc.css` is included in this repository.
-    ```
+    ```html
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/bootstrap.mvc.css" />
