@@ -1,6 +1,8 @@
 # ASP .NET MVC Core Bootstrap Tag Helpers #
 
-ASP.NET Core MVC Bootstrap tag helpers. This package includes tag helpers for the following bootstrap components:
+ASP.NET Core MVC Bootstrap tag helpers. Demo: http://aspcore.jqwidgets.com/bootstrap
+
+This package includes tag helpers for the following bootstrap components:
 
 - Alert 
 - Badge 
