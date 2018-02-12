@@ -1,0 +1,21 @@
+﻿<bootstrap-tabs>
+    <bootstrap-tabs-nav id="tabs3" class="">
+        <bootstrap-tab active="true"><a href="#home" aria-controls="home" role="tab">Home</a></bootstrap-tab>
+        <bootstrap-tab><a href="#profile" aria-controls="profile" role="tab">Profile</a></bootstrap-tab>
+        <bootstrap-tab>
+            <bootstrap-dropdown>
+                <bootstrap-dropdown-label id="bootstrapDropdown" class="btn btn-link" content="Dropdown"></bootstrap-dropdown-label>
+                <bootstrap-dropdown-menu labelledby="bootstrapDropdown">
+                    <bootstrap-dropdown-menu-item><a href="#dropdown1">fat</a></bootstrap-dropdown-menu-item>
+                    <bootstrap-dropdown-menu-item><a href="#dropdown2">mdo</a></bootstrap-dropdown-menu-item>
+                </bootstrap-dropdown-menu>
+            </bootstrap-dropdown>
+        </bootstrap-tab>
+    </bootstrap-tabs-nav>
+    <bootstrap-tabs-content>
+        <bootstrap-tab-pane active="true" id="home" class="fade in">Content 1.</bootstrap-tab-pane>
+        <bootstrap-tab-pane id="profile" class="fade">Content 2.</bootstrap-tab-pane>
+        <bootstrap-tab-pane id="dropdown1" class="fade">Content 3.</bootstrap-tab-pane>
+        <bootstrap-tab-pane id="dropdown2" class="fade">Content 4.</bootstrap-tab-pane>
+    </bootstrap-tabs-content>
+</bootstrap-tabs>

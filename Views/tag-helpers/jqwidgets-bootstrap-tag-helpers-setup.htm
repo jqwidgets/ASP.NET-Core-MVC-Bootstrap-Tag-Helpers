@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>jQWidgets Bootstrap Tag Helpers - Setup</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h2>jQWidgets Bootstrap Tag Helpers - Setup</h2>
+    <p>In this tutorial, you will learn how to integrate the jQWidgets Bootstrap Tag Helpers into an existing project. We will be using Microsoft Visual Studio 2015 and a default pre-existing <em>ASP.NET Core Web Application (.NET Framework)</em> project called "MyBootstrapMVCApp".</p>
+    <h3>1. Download</h3>
+    <p>Before proceeding with the tutorial, download the jQWidgets Bootstrap Tag Helpers package and unpack it in a location of your choosing.</p>
+    <h3>2. Add the jQWidgets Bootstrap Tag Helpers Project</h3>
+    <p>In order to make the jQWidgets Bootstrap Tag Helpers available in our project we will have to add the "jQWidgets_Bootstrap_tag_helpers" project to the solution of "MyBootstrapMVCApp".</p>
+    <p>Right-click the <code>src</code> folder and select <strong>Add</strong> → <strong>Existing Project...</strong>:</p>
+    <img src="images/add-existing-project.png" />
+    <p>Browse for the folder you extracted the jQWidgets Bootstrap Tag Helpers package to and select the file <code>jQWidgets_Bootstrap_tag_helpers.xproj</code>. It will be added to the solution.</p>
+    <h3>3. Reference the jQWidgets Bootstrap Tag Helpers Project</h3>
+    <p>Right-click the "MyBootstrapMVCApp" <strong>References</strong> and select <strong>Add Reference...</strong> In the Reference Manager pop-up window, check "jQWidgets_Bootstrap_tag_helpers":</p>
+    <img src="images/reference-manager.png" />
+    <h3>4. Update <code>_ViewImports.cshtml</code></h3>
+    <p>Open the folder <code>Views</code> and then the file <code>_ViewImports.cshtml</code>. Add the following line to the bottom:</p>
+    <div style="background-color: #EFF0F1;">
+        <code>@addTagHelper *, jQWidgets_Bootstrap_tag_helpers</code>
+    </div>
+    <p>This way the jQWidgets Bootstrap Tag Helpers are now "registered" for use.</p>
+    <h3>5. Add a reference to <code>bootstrap.mvc.css</code></h3>
+    <p>In the jQWidgets Bootstrap Tag Helpers download package you can also find the file <code>bootstrap.mvc.css</code>. It has to be referenced on the page where the Tag Helpers will appear. In our case, we add the file to the folder <code>wwwroot\css</code>:</p>
+    <img src="images/bootstrap-mvc-css.png" />
+    <p>and reference it in the file <code>Views\Shared\_Layout.cshtml</code>:</p>
+    <div style="background-color: #EFF0F1;">
+        <pre><code>&lt;environment names="Development"&gt;
+    &lt;link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" /&gt;
+    &lt;link rel="stylesheet" href="~/css/site.css" /&gt;
+    <strong>&lt;link rel="stylesheet" href="~/css/bootstrap.mvc.css" /&gt;</strong>
+&lt;/environment></code></pre>
+    </div>
+    <h3>6. Build the Solution</h3>
+    <p>Press <strong>F6</strong> to Build the solution.</p>
+    <h3>7. Add a Bootstrap Tag Helper to a Page</h3>
+    <p>We can now add a Bootstrap Tag Helper to one of the "MyBootstrapMVCApp" views (pages). For example, we will add the &lt;bootstrap-alert&gt; Tag Helper to <code>Views\Home\About.cshtml</code>. While typing, IntelliSense suggest the existing Tag Helpers:</p>
+    <img src="images/IntelliSense.png" />
+    <p>If we add the following lines of code:</p>
+    <div>
+        <pre><code>&lt;bootstrap-alert class="alert-warning alert-dismissible fade in"&gt;
+    &lt;bootstrap-alert-close&gt;&lt;span aria-hidden="true"&gt;×&lt;/span&gt;&lt;/bootstrap-alert-close&gt;
+    &lt;strong&gt;Holy guacamole!&lt;/strong&gt; Best check yo self, you're not looking too good.
+&lt;/bootstrap-alert&gt;</code></pre>
+    </div>
+    <p>the result when the page is shown will be:</p>
+    <img src="images/page-with-alert.png" />
+</body>
+</html>
